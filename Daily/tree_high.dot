@@ -1,0 +1,28 @@
+digraph Tree {
+node [shape=box, style="filled", color="black"] ;
+0 [label="DEBTINC <= 45.155\ngini = 0.167\nsamples = 2623\nvalue = [2382, 241]\nclass = GOOD", fillcolor="#e88e4d"] ;
+1 [label="DELINQ <= 4.5\ngini = 0.138\nsamples = 2571\nvalue = [2380, 191]\nclass = GOOD", fillcolor="#e78b49"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="CLNO <= 2.5\ngini = 0.129\nsamples = 2558\nvalue = [2380, 178]\nclass = GOOD", fillcolor="#e78a48"] ;
+1 -> 2 ;
+3 [label="VALUE <= 82337.5\ngini = 0.48\nsamples = 20\nvalue = [8, 12]\nclass = BAD", fillcolor="#bddef6"] ;
+2 -> 3 ;
+4 [label="gini = 0.32\nsamples = 10\nvalue = [8, 2]\nclass = GOOD", fillcolor="#eca06a"] ;
+3 -> 4 ;
+5 [label="gini = 0.0\nsamples = 10\nvalue = [0, 10]\nclass = BAD", fillcolor="#399de5"] ;
+3 -> 5 ;
+6 [label="DEROG <= 2.5\ngini = 0.122\nsamples = 2538\nvalue = [2372, 166]\nclass = GOOD", fillcolor="#e78a47"] ;
+2 -> 6 ;
+7 [label="gini = 0.116\nsamples = 2517\nvalue = [2362, 155]\nclass = GOOD", fillcolor="#e78946"] ;
+6 -> 7 ;
+8 [label="gini = 0.499\nsamples = 21\nvalue = [10, 11]\nclass = BAD", fillcolor="#edf6fd"] ;
+6 -> 8 ;
+9 [label="gini = 0.0\nsamples = 13\nvalue = [0, 13]\nclass = BAD", fillcolor="#399de5"] ;
+1 -> 9 ;
+10 [label="CLAGE <= 200.749\ngini = 0.074\nsamples = 52\nvalue = [2, 50]\nclass = BAD", fillcolor="#41a1e6"] ;
+0 -> 10 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+11 [label="gini = 0.0\nsamples = 42\nvalue = [0, 42]\nclass = BAD", fillcolor="#399de5"] ;
+10 -> 11 ;
+12 [label="gini = 0.32\nsamples = 10\nvalue = [2, 8]\nclass = BAD", fillcolor="#6ab6ec"] ;
+10 -> 12 ;
+}

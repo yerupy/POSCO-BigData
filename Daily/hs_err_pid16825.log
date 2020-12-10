@@ -1,0 +1,1798 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f7879ffca63, pid=16825, tid=0x00007f790292e740
+#
+# JRE version: OpenJDK Runtime Environment (8.0_275-b01) (build 1.8.0_275-8u275-b01-0ubuntu1~18.04-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.275-b01 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# C  [_backend_agg.cpython-38-x86_64-linux-gnu.so+0x10a63]  RendererAgg::RendererAgg(unsigned int, unsigned int, double)+0x593
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000560ec7e52000):  JavaThread "main" [_thread_in_native, id=16825, stack(0x00007ffc1acb9000,0x00007ffc1adb9000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x00007f786c1f9000
+
+Registers:
+RAX=0x00007f786c1dad10, RBX=0x0000560eca101630, RCX=0x00007f786c1f9000, RDX=0x0000000000001e30
+RSP=0x00007ffc1adb0d80, RBP=0x0000000000008ca0, RSI=0x0000000000002328, RDI=0x0000000000001852
+R8 =0x00000000ffffffff, R9 =0x0000000000000000, R10=0x0000000000000022, R11=0x0000000000000246
+R12=0x0000560eca101658, R13=0x0000000000008ca0, R14=0x0000560eca101788, R15=0x0000560eca101778
+RIP=0x00007f7879ffca63, EFLAGS=0x0000000000010216, CSGSFS=0x002b000000000033, ERR=0x0000000000000006
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007ffc1adb0d80)
+0x00007ffc1adb0d80:   4052000000000000 00023280021ad35d
+0x00007ffc1adb0d90:   0000000000000001 0000560eca101630
+0x00007ffc1adb0da0:   00007f786bb6da50 0000000000000000
+0x00007ffc1adb0db0:   0000000000000000 00007f786bb6da50
+0x00007ffc1adb0dc0:   0000560ec60b6f60 00007f787a00953c
+0x00007ffc1adb0dd0:   00008ca0c60d0b90 0000000000008ca0
+0x00007ffc1adb0de0:   4052000000000000 7f925ed758b2aa00
+0x00007ffc1adb0df0:   00007f786bbe2380 00007f787a042f60
+0x00007ffc1adb0e00:   0000000000000000 0000560ec60b71d4
+0x00007ffc1adb0e10:   00007f786babea90 00007f787a05685e
+0x00007ffc1adb0e20:   0000560ec73ef720 00007f786bc23928
+0x00007ffc1adb0e30:   0000560ec62b26c0 00007f786bc23780
+0x00007ffc1adb0e40:   00007f786bc23908 0000560ec613b5e5
+0x00007ffc1adb0e50:   00007f78c43b0100 00007f787a056830
+0x00007ffc1adb0e60:   00007f786bc238e8 00007f787a3ea360
+0x00007ffc1adb0e70:   00007f787a05a180 00007f787a04fd40
+0x00007ffc1adb0e80:   00007f786bb023d0 00007f786bc23908
+0x00007ffc1adb0e90:   ffffffff00000000 0000560ec60b7e4c
+0x00007ffc1adb0ea0:   0000000000000000 00007f78780d5d88
+0x00007ffc1adb0eb0:   00007f787a0480f0 7f925ed7ffffffff
+0x00007ffc1adb0ec0:   00007f787a33b0f0 00007f787a378d30
+0x00007ffc1adb0ed0:   00000000ca375760 0000560ec62e6780
+0x00007ffc1adb0ee0:   0000560ec73ef720 00007f787a31c804
+0x00007ffc1adb0ef0:   0000560ec73ef720 0000560ec60b6f33
+0x00007ffc1adb0f00:   0000000000000b86 0000560ec73ef720
+0x00007ffc1adb0f10:   00007f78780d5d80 0000560ec613bbbc
+0x00007ffc1adb0f20:   0000560ec62e0960 00007f787a31c800
+0x00007ffc1adb0f30:   00007f78780d5d78 7f925ed758b2aa00
+0x00007ffc1adb0f40:   00007f787a3029d0 00007f787a056b80
+0x00007ffc1adb0f50:   0000000000000000 0000000000000004
+0x00007ffc1adb0f60:   0000560ec73ef720 00007ffc1adb0ff0
+0x00007ffc1adb0f70:   00007f786bc23780 0000560ec6105f0d 
+
+Instructions: (pc=0x00007f7879ffca63)
+0x00007f7879ffca43:   0f 61 c1 66 45 0f 69 d1 66 41 0f 61 c2 66 0f db
+0x00007f7879ffca53:   c4 66 0f 67 c0 0f 1f 84 00 00 00 00 00 83 c2 01
+0x00007f7879ffca63:   0f 11 01 48 83 c1 10 39 f2 72 f2 8d 14 b5 00 00
+0x00007f7879ffca73:   00 00 89 e9 29 d1 48 8d 04 90 39 d5 74 7d f2 0f 
+
+Register to memory mapping:
+
+RAX=0x00007f786c1dad10 is an unknown value
+RBX=0x0000560eca101630 is an unknown value
+RCX=0x00007f786c1f9000: <offset 0> in /home/piai/anaconda3/lib/python3.8/site-packages/mkl/../../../libmkl_avx512.so at 0x00007f786c1f9000
+RDX=0x0000000000001e30 is an unknown value
+RSP=0x00007ffc1adb0d80 is pointing into the stack for thread: 0x0000560ec7e52000
+RBP=0x0000000000008ca0 is an unknown value
+RSI=0x0000000000002328 is an unknown value
+RDI=0x0000000000001852 is an unknown value
+R8 =0x00000000ffffffff is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x0000000000000022 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x0000560eca101658 is an unknown value
+R13=0x0000000000008ca0 is an unknown value
+R14=0x0000560eca101788 is an unknown value
+R15=0x0000560eca101778 is an unknown value
+
+
+Stack: [0x00007ffc1acb9000,0x00007ffc1adb9000],  sp=0x00007ffc1adb0d80,  free space=991k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [_backend_agg.cpython-38-x86_64-linux-gnu.so+0x10a63]  RendererAgg::RendererAgg(unsigned int, unsigned int, double)+0x593
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000560ec82b0800 JavaThread "Python Reference Queue" daemon [_thread_blocked, id=16854, stack(0x00007f78c4a8c000,0x00007f78c4b8d000)]
+  0x0000560ec815f000 JavaThread "Service Thread" daemon [_thread_blocked, id=16852, stack(0x00007f78c50f1000,0x00007f78c51f2000)]
+  0x0000560ec815c000 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=16851, stack(0x00007f78c51f3000,0x00007f78c52f3000)]
+  0x0000560ec815a000 JavaThread "C2 CompilerThread2" daemon [_thread_blocked, id=16850, stack(0x00007f78c52f4000,0x00007f78c53f4000)]
+  0x0000560ec8158000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=16849, stack(0x00007f78c53f5000,0x00007f78c54f5000)]
+  0x0000560ec8155000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=16848, stack(0x00007f78c54f6000,0x00007f78c55f6000)]
+  0x0000560ec8152000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16847, stack(0x00007f78c55f6000,0x00007f78c56f7000)]
+  0x0000560ec8122800 JavaThread "Finalizer" daemon [_thread_blocked, id=16846, stack(0x00007f78c56f7000,0x00007f78c57f8000)]
+  0x0000560ec811e000 JavaThread "Reference Handler" daemon [_thread_blocked, id=16845, stack(0x00007f78c57f8000,0x00007f78c58f9000)]
+=>0x0000560ec7e52000 JavaThread "main" [_thread_in_native, id=16825, stack(0x00007ffc1acb9000,0x00007ffc1adb9000)]
+
+Other Threads:
+  0x0000560ec8114800 VMThread [stack: 0x00007f78c58fa000,0x00007f78c59fa000] [id=16844]
+  0x0000560ec8161800 WatcherThread [stack: 0x00007f78c4ff1000,0x00007f78c50f1000] [id=16853]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 294912K, used 4749K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 239104K, 1% used [0x00000000eab00000,0x00000000eafa3430,0x00000000f9480000)
+  from space 55808K, 0% used [0x00000000fc980000,0x00000000fc980000,0x0000000100000000)
+  to   space 54272K, 0% used [0x00000000f9480000,0x00000000f9480000,0x00000000fc980000)
+ ParOldGen       total 683008K, used 191495K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbb01ea0,0x00000000e9b00000)
+ Metaspace       used 13954K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+
+Card table byte_map: [0x00007f78ceacf000,0x00007f78cecd0000] byte_map_base: 0x00007f78ce4cf000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f78dff74680
+ Begin Bits: [0x00007f78c6000000, 0x00007f78c7000000)
+ End Bits:   [0x00007f78c7000000, 0x00007f78c8000000)
+
+Polling page: 0x00007f7902933000
+
+CodeCache: size=245760Kb used=9783Kb max_used=9884Kb free=235976Kb
+ bounds [0x00007f78cf090000, 0x00007f78cfa80000, 0x00007f78de090000]
+ total_blobs=3080 nmethods=2719 adapters=274
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 409.764 Thread 0x0000560ec815a000 3397       4       kr.ac.kaist.swrc.jhannanum.plugin.MajorPlugin.MorphAnalyzer.ChartMorphAnalyzer.Exp::rule_irr_word (1433 bytes)
+Event: 409.993 Thread 0x0000560ec8155000 nmethod 3396 0x00007f78cf92ba50 code [0x00007f78cf92c320, 0x00007f78cf934710]
+Event: 409.993 Thread 0x0000560ec8155000 3403       4       java.lang.AbstractStringBuilder::<init> (12 bytes)
+Event: 409.994 Thread 0x0000560ec8155000 nmethod 3403 0x00007f78cf7bf290 code [0x00007f78cf7bf3e0, 0x00007f78cf7bf518]
+Event: 409.994 Thread 0x0000560ec8155000 3398       4       kr.ac.kaist.swrc.jhannanum.plugin.MajorPlugin.MorphAnalyzer.ChartMorphAnalyzer.Exp::rule_irr_word2 (345 bytes)
+Event: 410.015 Thread 0x0000560ec8158000 nmethod 3268 0x00007f78cfa4b610 code [0x00007f78cfa4c100, 0x00007f78cfa57660]
+Event: 410.085 Thread 0x0000560ec815a000 nmethod 3397 0x00007f78cfa6b450 code [0x00007f78cfa6c180, 0x00007f78cfa759e0]
+Event: 410.089 Thread 0x0000560ec8155000 nmethod 3398 0x00007f78cf820ad0 code [0x00007f78cf820fa0, 0x00007f78cf825488]
+Event: 417.484 Thread 0x0000560ec8158000 3410       4       java.lang.ref.ReferenceQueue::reallyPoll (65 bytes)
+Event: 417.487 Thread 0x0000560ec8158000 nmethod 3410 0x00007f78cf7cb450 code [0x00007f78cf7cb5a0, 0x00007f78cf7cb6f8]
+
+GC Heap History (10 events):
+Event: 407.206 GC heap before
+{Heap before GC invocations=227 (full 5):
+ PSYoungGen      total 333312K, used 317440K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 317440K, 100% used [0x00000000eab00000,0x00000000fe100000,0x00000000fe100000)
+  from space 15872K, 0% used [0x00000000fe100000,0x00000000fe100000,0x00000000ff080000)
+  to   space 15360K, 0% used [0x00000000ff100000,0x00000000ff100000,0x0000000100000000)
+ ParOldGen       total 683008K, used 71931K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 10% used [0x00000000c0000000,0x00000000c463ee98,0x00000000e9b00000)
+ Metaspace       used 13950K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+Event: 407.351 GC heap after
+Heap after GC invocations=227 (full 5):
+ PSYoungGen      total 249856K, used 15337K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 234496K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9000000)
+  from space 15360K, 99% used [0x00000000ff100000,0x00000000ffffa500,0x0000000100000000)
+  to   space 57344K, 0% used [0x00000000f9000000,0x00000000f9000000,0x00000000fc800000)
+ ParOldGen       total 683008K, used 177000K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 25% used [0x00000000c0000000,0x00000000cacda028,0x00000000e9b00000)
+ Metaspace       used 13950K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+}
+Event: 407.404 GC heap before
+{Heap before GC invocations=228 (full 5):
+ PSYoungGen      total 249856K, used 19994K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 234496K, 1% used [0x00000000eab00000,0x00000000eaf8c6b8,0x00000000f9000000)
+  from space 15360K, 99% used [0x00000000ff100000,0x00000000ffffa500,0x0000000100000000)
+  to   space 57344K, 0% used [0x00000000f9000000,0x00000000f9000000,0x00000000fc800000)
+ ParOldGen       total 683008K, used 177000K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 25% used [0x00000000c0000000,0x00000000cacda028,0x00000000e9b00000)
+ Metaspace       used 13950K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+Event: 407.435 GC heap after
+Heap after GC invocations=228 (full 5):
+ PSYoungGen      total 291840K, used 96K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 234496K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9000000)
+  from space 57344K, 0% used [0x00000000f9000000,0x00000000f9018000,0x00000000fc800000)
+  to   space 55808K, 0% used [0x00000000fc980000,0x00000000fc980000,0x0000000100000000)
+ ParOldGen       total 683008K, used 192905K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbc62550,0x00000000e9b00000)
+ Metaspace       used 13950K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+}
+Event: 407.435 GC heap before
+{Heap before GC invocations=229 (full 6):
+ PSYoungGen      total 291840K, used 96K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 234496K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9000000)
+  from space 57344K, 0% used [0x00000000f9000000,0x00000000f9018000,0x00000000fc800000)
+  to   space 55808K, 0% used [0x00000000fc980000,0x00000000fc980000,0x0000000100000000)
+ ParOldGen       total 683008K, used 192905K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbc62550,0x00000000e9b00000)
+ Metaspace       used 13950K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+Event: 408.877 GC heap after
+Heap after GC invocations=229 (full 6):
+ PSYoungGen      total 291840K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 234496K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9000000)
+  from space 57344K, 0% used [0x00000000f9000000,0x00000000f9000000,0x00000000fc800000)
+  to   space 55808K, 0% used [0x00000000fc980000,0x00000000fc980000,0x0000000100000000)
+ ParOldGen       total 683008K, used 191497K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbb02420,0x00000000e9b00000)
+ Metaspace       used 13950K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+}
+Event: 408.939 GC heap before
+{Heap before GC invocations=230 (full 6):
+ PSYoungGen      total 291840K, used 4657K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 234496K, 1% used [0x00000000eab00000,0x00000000eaf8c640,0x00000000f9000000)
+  from space 57344K, 0% used [0x00000000f9000000,0x00000000f9000000,0x00000000fc800000)
+  to   space 55808K, 0% used [0x00000000fc980000,0x00000000fc980000,0x0000000100000000)
+ ParOldGen       total 683008K, used 191497K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbb02420,0x00000000e9b00000)
+ Metaspace       used 13952K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+Event: 408.940 GC heap after
+Heap after GC invocations=230 (full 6):
+ PSYoungGen      total 294912K, used 128K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 239104K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9480000)
+  from space 55808K, 0% used [0x00000000fc980000,0x00000000fc9a0000,0x0000000100000000)
+  to   space 54272K, 0% used [0x00000000f9480000,0x00000000f9480000,0x00000000fc980000)
+ ParOldGen       total 683008K, used 191497K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbb02420,0x00000000e9b00000)
+ Metaspace       used 13952K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+}
+Event: 408.940 GC heap before
+{Heap before GC invocations=231 (full 7):
+ PSYoungGen      total 294912K, used 128K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 239104K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9480000)
+  from space 55808K, 0% used [0x00000000fc980000,0x00000000fc9a0000,0x0000000100000000)
+  to   space 54272K, 0% used [0x00000000f9480000,0x00000000f9480000,0x00000000fc980000)
+ ParOldGen       total 683008K, used 191497K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbb02420,0x00000000e9b00000)
+ Metaspace       used 13952K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+Event: 409.672 GC heap after
+Heap after GC invocations=231 (full 7):
+ PSYoungGen      total 294912K, used 0K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 239104K, 0% used [0x00000000eab00000,0x00000000eab00000,0x00000000f9480000)
+  from space 55808K, 0% used [0x00000000fc980000,0x00000000fc980000,0x0000000100000000)
+  to   space 54272K, 0% used [0x00000000f9480000,0x00000000f9480000,0x00000000fc980000)
+ ParOldGen       total 683008K, used 191495K [0x00000000c0000000, 0x00000000e9b00000, 0x00000000eab00000)
+  object space 683008K, 28% used [0x00000000c0000000,0x00000000cbb01ea0,0x00000000e9b00000)
+ Metaspace       used 13952K, capacity 14564K, committed 14848K, reserved 1062912K
+  class space    used 2054K, capacity 2185K, committed 2304K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 406.871 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf4c4608 method=kr.ac.kaist.swrc.jhannanum.share.Code.toTripleArray(Ljava/lang/String;)[C @ 238
+Event: 406.894 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf4d366c method=kr.ac.kaist.swrc.jhannanum.plugin.MajorPlugin.MorphAnalyzer.ChartMorphAnalyzer.Trie.read_dic(Ljava/lang/String;Lkr/ac/kaist/swrc/jhannanum/share/TagSet;)V @ 283
+Event: 406.894 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf7b821c method=kr.ac.kaist.swrc.jhannanum.plugin.MajorPlugin.MorphAnalyzer.ChartMorphAnalyzer.Trie.<init>(I)V @ 92
+Event: 406.895 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf4381c4 method=sun.nio.cs.UTF_8$Decoder.decodeArrayLoop(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;)Ljava/nio/charset/CoderResult; @ 167
+Event: 406.911 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf6e36ac method=sun.misc.FloatingDecimal.readJavaFormatString(Ljava/lang/String;)Lsun/misc/FloatingDecimal$ASCIIToBinaryConverter; @ 169
+Event: 406.941 Thread 0x0000560ec7e52000 Uncommon trap: reason=unloaded action=reinterpret pc=0x00007f78cf3f1064 method=java.util.regex.Pattern.sequence(Ljava/util/regex/Pattern$Node;)Ljava/util/regex/Pattern$Node; @ 423
+Event: 406.952 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf3f46dc method=kr.ac.kaist.swrc.jhannanum.plugin.MajorPlugin.MorphAnalyzer.ChartMorphAnalyzer.Exp.pcheck(Ljava/lang/String;ILjava/lang/String;)I @ 5
+Event: 406.970 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf4b7a94 method=java.util.StringTokenizer.scanToken(I)I @ 42
+Event: 406.971 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf63cbe4 method=java.util.StringTokenizer.scanToken(I)I @ 42
+Event: 407.001 Thread 0x0000560ec7e52000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f78cf55fe74 method=java.lang.String.split(Ljava/lang/String;I)[Ljava/lang/String; @ 32
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 407.151 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fd677560) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.157 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fd758600) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.162 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fd85dcf8) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.168 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fd99e200) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.172 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fda9a418) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.178 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fdbf4d40) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.194 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fde75598) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 407.200 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000fdf99650) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 408.879 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000eab009f0) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+Event: 409.724 Thread 0x0000560ec7e52000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': -1> (0x00000000eaba33d0) thrown at [/build/openjdk-8-ElpxQ7/openjdk-8-8u275-b01/src/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 368]
+
+Events (10 events):
+Event: 409.736 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf8ea350
+Event: 409.736 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf8fa0d0
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf91e790
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf92e910
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf937a10
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf94d110
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf94e790
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf951750
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf97c310
+Event: 409.737 Thread 0x0000560ec815c000 flushing nmethod 0x00007f78cf987b10
+
+
+Dynamic libraries:
+c0000000-e9b00000 rw-p 00000000 00:00 0 
+e9b00000-eab00000 ---p 00000000 00:00 0 
+eab00000-100000000 rw-p 00000000 00:00 0 
+100000000-100240000 rw-p 00000000 00:00 0 
+100240000-140000000 ---p 00000000 00:00 0 
+560ec5f7a000-560ec5fd9000 r--p 00000000 08:02 14817298                   /home/piai/anaconda3/bin/python3.8
+560ec5fd9000-560ec61c9000 r-xp 0005f000 08:02 14817298                   /home/piai/anaconda3/bin/python3.8
+560ec61c9000-560ec62af000 r--p 0024f000 08:02 14817298                   /home/piai/anaconda3/bin/python3.8
+560ec62af000-560ec62b4000 r--p 00334000 08:02 14817298                   /home/piai/anaconda3/bin/python3.8
+560ec62b4000-560ec62ec000 rw-p 00339000 08:02 14817298                   /home/piai/anaconda3/bin/python3.8
+560ec62ec000-560ec630c000 rw-p 00000000 00:00 0 
+560ec73eb000-560ec8849000 rw-p 00000000 00:00 0                          [heap]
+560ec8849000-560ec8e30000 rw-p 00000000 00:00 0                          [heap]
+560ec8e30000-560eca4be000 rw-p 00000000 00:00 0                          [heap]
+560eca4be000-560eca934000 rw-p 00000000 00:00 0                          [heap]
+560eca934000-560ecaa3c000 rw-p 00000000 00:00 0                          [heap]
+560ecaa3c000-560ecaf1b000 rw-p 00000000 00:00 0                          [heap]
+560ecaf1b000-560ecaf3b000 rw-p 00000000 00:00 0                          [heap]
+7f7836ad8000-7f786c1f9000 rw-p 00000000 00:00 0 
+7f786c1f9000-7f786fa67000 r-xp 00000000 08:02 14421735                   /home/piai/anaconda3/lib/libmkl_avx512.so
+7f786fa67000-7f786fc67000 ---p 0386e000 08:02 14421735                   /home/piai/anaconda3/lib/libmkl_avx512.so
+7f786fc67000-7f786fc70000 r--p 0386e000 08:02 14421735                   /home/piai/anaconda3/lib/libmkl_avx512.so
+7f786fc70000-7f786fc7e000 rw-p 03877000 08:02 14421735                   /home/piai/anaconda3/lib/libmkl_avx512.so
+7f786fc7e000-7f786fc80000 rw-p 00000000 00:00 0 
+7f786fc80000-7f7873da2000 r-xp 00000000 08:02 14421737                   /home/piai/anaconda3/lib/libmkl_core.so
+7f7873da2000-7f7873fa2000 ---p 04122000 08:02 14421737                   /home/piai/anaconda3/lib/libmkl_core.so
+7f7873fa2000-7f7873fa9000 r--p 04122000 08:02 14421737                   /home/piai/anaconda3/lib/libmkl_core.so
+7f7873fa9000-7f7873fd9000 rw-p 04129000 08:02 14421737                   /home/piai/anaconda3/lib/libmkl_core.so
+7f7873fd9000-7f7874000000 rw-p 00000000 00:00 0 
+7f7874000000-7f7874021000 rw-p 00000000 00:00 0 
+7f7874021000-7f7878000000 ---p 00000000 00:00 0 
+7f7878013000-7f7878016000 r--p 00000000 08:02 15074056                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_png.cpython-38-x86_64-linux-gnu.so
+7f7878016000-7f7878019000 r-xp 00003000 08:02 15074056                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_png.cpython-38-x86_64-linux-gnu.so
+7f7878019000-7f787801b000 r--p 00006000 08:02 15074056                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_png.cpython-38-x86_64-linux-gnu.so
+7f787801b000-7f787801c000 r--p 00007000 08:02 15074056                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_png.cpython-38-x86_64-linux-gnu.so
+7f787801c000-7f787801d000 rw-p 00008000 08:02 15074056                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_png.cpython-38-x86_64-linux-gnu.so
+7f787801d000-7f787832d000 rw-p 00000000 00:00 0 
+7f787832d000-7f7878333000 r--p 00000000 08:02 12980173                   /home/piai/anaconda3/lib/libtbbmalloc.so.2
+7f7878333000-7f7878341000 r-xp 00006000 08:02 12980173                   /home/piai/anaconda3/lib/libtbbmalloc.so.2
+7f7878341000-7f7878348000 r--p 00014000 08:02 12980173                   /home/piai/anaconda3/lib/libtbbmalloc.so.2
+7f7878348000-7f7878349000 r--p 0001a000 08:02 12980173                   /home/piai/anaconda3/lib/libtbbmalloc.so.2
+7f7878349000-7f787834c000 rw-p 0001b000 08:02 12980173                   /home/piai/anaconda3/lib/libtbbmalloc.so.2
+7f787834c000-7f78783ec000 rw-p 00000000 00:00 0 
+7f78783ec000-7f78785ac000 ---p 00000000 00:00 0 
+7f78785ac000-7f78785b0000 r--p 00000000 08:02 14419767                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/testing.cpython-38-x86_64-linux-gnu.so
+7f78785b0000-7f78785c0000 r-xp 00004000 08:02 14419767                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/testing.cpython-38-x86_64-linux-gnu.so
+7f78785c0000-7f78785c2000 r--p 00014000 08:02 14419767                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/testing.cpython-38-x86_64-linux-gnu.so
+7f78785c2000-7f78785c3000 r--p 00015000 08:02 14419767                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/testing.cpython-38-x86_64-linux-gnu.so
+7f78785c3000-7f78785c4000 rw-p 00016000 08:02 14419767                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/testing.cpython-38-x86_64-linux-gnu.so
+7f78785c4000-7f78786c5000 rw-p 00000000 00:00 0 
+7f78786c5000-7f78786cb000 r--p 00000000 08:02 14419762                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/json.cpython-38-x86_64-linux-gnu.so
+7f78786cb000-7f78786d6000 r-xp 00006000 08:02 14419762                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/json.cpython-38-x86_64-linux-gnu.so
+7f78786d6000-7f78786da000 r--p 00011000 08:02 14419762                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/json.cpython-38-x86_64-linux-gnu.so
+7f78786da000-7f78786db000 ---p 00015000 08:02 14419762                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/json.cpython-38-x86_64-linux-gnu.so
+7f78786db000-7f78786dc000 r--p 00015000 08:02 14419762                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/json.cpython-38-x86_64-linux-gnu.so
+7f78786dc000-7f78786dd000 rw-p 00016000 08:02 14419762                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/json.cpython-38-x86_64-linux-gnu.so
+7f78786dd000-7f787871d000 rw-p 00000000 00:00 0 
+7f787871d000-7f787872a000 r--p 00000000 08:02 14420255                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/parsers.cpython-38-x86_64-linux-gnu.so
+7f787872a000-7f7878786000 r-xp 0000d000 08:02 14420255                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/parsers.cpython-38-x86_64-linux-gnu.so
+7f7878786000-7f7878793000 r--p 00069000 08:02 14420255                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/parsers.cpython-38-x86_64-linux-gnu.so
+7f7878793000-7f7878794000 r--p 00075000 08:02 14420255                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/parsers.cpython-38-x86_64-linux-gnu.so
+7f7878794000-7f787879b000 rw-p 00076000 08:02 14420255                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/parsers.cpython-38-x86_64-linux-gnu.so
+7f787879b000-7f787885c000 rw-p 00000000 00:00 0 
+7f787885c000-7f7878864000 r--p 00000000 08:02 14419915                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reduction.cpython-38-x86_64-linux-gnu.so
+7f7878864000-7f787889d000 r-xp 00008000 08:02 14419915                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reduction.cpython-38-x86_64-linux-gnu.so
+7f787889d000-7f78788a7000 r--p 00041000 08:02 14419915                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reduction.cpython-38-x86_64-linux-gnu.so
+7f78788a7000-7f78788a8000 r--p 0004a000 08:02 14419915                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reduction.cpython-38-x86_64-linux-gnu.so
+7f78788a8000-7f78788ad000 rw-p 0004b000 08:02 14419915                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reduction.cpython-38-x86_64-linux-gnu.so
+7f78788ad000-7f78788ee000 rw-p 00000000 00:00 0 
+7f78788ee000-7f78788fb000 r--p 00000000 08:02 14420366                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/groupby.cpython-38-x86_64-linux-gnu.so
+7f78788fb000-7f7878a0b000 r-xp 0000d000 08:02 14420366                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/groupby.cpython-38-x86_64-linux-gnu.so
+7f7878a0b000-7f7878a1f000 r--p 0011d000 08:02 14420366                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/groupby.cpython-38-x86_64-linux-gnu.so
+7f7878a1f000-7f7878a20000 r--p 00130000 08:02 14420366                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/groupby.cpython-38-x86_64-linux-gnu.so
+7f7878a20000-7f7878a29000 rw-p 00131000 08:02 14420366                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/groupby.cpython-38-x86_64-linux-gnu.so
+7f7878a29000-7f7878a6b000 rw-p 00000000 00:00 0 
+7f7878a6b000-7f7878a71000 r--p 00000000 08:02 14419782                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/indexers.cpython-38-x86_64-linux-gnu.so
+7f7878a71000-7f7878a89000 r-xp 00006000 08:02 14419782                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/indexers.cpython-38-x86_64-linux-gnu.so
+7f7878a89000-7f7878a8f000 r--p 0001e000 08:02 14419782                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/indexers.cpython-38-x86_64-linux-gnu.so
+7f7878a8f000-7f7878a90000 r--p 00023000 08:02 14419782                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/indexers.cpython-38-x86_64-linux-gnu.so
+7f7878a90000-7f7878a93000 rw-p 00024000 08:02 14419782                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/indexers.cpython-38-x86_64-linux-gnu.so
+7f7878a93000-7f7878a9d000 r--p 00000000 08:02 14420039                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/aggregations.cpython-38-x86_64-linux-gnu.so
+7f7878a9d000-7f7878ae1000 r-xp 0000a000 08:02 14420039                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/aggregations.cpython-38-x86_64-linux-gnu.so
+7f7878ae1000-7f7878aeb000 r--p 0004e000 08:02 14420039                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/aggregations.cpython-38-x86_64-linux-gnu.so
+7f7878aeb000-7f7878aec000 r--p 00057000 08:02 14420039                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/aggregations.cpython-38-x86_64-linux-gnu.so
+7f7878aec000-7f7878af1000 rw-p 00058000 08:02 14420039                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/window/aggregations.cpython-38-x86_64-linux-gnu.so
+7f7878af1000-7f7878b32000 rw-p 00000000 00:00 0 
+7f7878b32000-7f7878b3a000 r--p 00000000 08:02 14419934                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reshape.cpython-38-x86_64-linux-gnu.so
+7f7878b3a000-7f7878b64000 r-xp 00008000 08:02 14419934                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reshape.cpython-38-x86_64-linux-gnu.so
+7f7878b64000-7f7878b6c000 r--p 00032000 08:02 14419934                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reshape.cpython-38-x86_64-linux-gnu.so
+7f7878b6c000-7f7878b6d000 ---p 0003a000 08:02 14419934                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reshape.cpython-38-x86_64-linux-gnu.so
+7f7878b6d000-7f7878b6e000 r--p 0003a000 08:02 14419934                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reshape.cpython-38-x86_64-linux-gnu.so
+7f7878b6e000-7f7878b72000 rw-p 0003b000 08:02 14419934                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/reshape.cpython-38-x86_64-linux-gnu.so
+7f7878b72000-7f7878bb3000 rw-p 00000000 00:00 0 
+7f7878bb3000-7f7878bb5000 r--p 00000000 08:02 14682865                   /home/piai/anaconda3/lib/python3.8/lib-dynload/mmap.cpython-38-x86_64-linux-gnu.so
+7f7878bb5000-7f7878bb8000 r-xp 00002000 08:02 14682865                   /home/piai/anaconda3/lib/python3.8/lib-dynload/mmap.cpython-38-x86_64-linux-gnu.so
+7f7878bb8000-7f7878bba000 r--p 00005000 08:02 14682865                   /home/piai/anaconda3/lib/python3.8/lib-dynload/mmap.cpython-38-x86_64-linux-gnu.so
+7f7878bba000-7f7878bbb000 r--p 00006000 08:02 14682865                   /home/piai/anaconda3/lib/python3.8/lib-dynload/mmap.cpython-38-x86_64-linux-gnu.so
+7f7878bbb000-7f7878bbc000 rw-p 00007000 08:02 14682865                   /home/piai/anaconda3/lib/python3.8/lib-dynload/mmap.cpython-38-x86_64-linux-gnu.so
+7f7878bbc000-7f7878bfc000 rw-p 00000000 00:00 0 
+7f7878bfc000-7f7878c04000 r--p 00000000 08:02 14419922                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/internals.cpython-38-x86_64-linux-gnu.so
+7f7878c04000-7f7878c2b000 r-xp 00008000 08:02 14419922                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/internals.cpython-38-x86_64-linux-gnu.so
+7f7878c2b000-7f7878c33000 r--p 0002f000 08:02 14419922                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/internals.cpython-38-x86_64-linux-gnu.so
+7f7878c33000-7f7878c34000 ---p 00037000 08:02 14419922                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/internals.cpython-38-x86_64-linux-gnu.so
+7f7878c34000-7f7878c35000 r--p 00037000 08:02 14419922                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/internals.cpython-38-x86_64-linux-gnu.so
+7f7878c35000-7f7878c39000 rw-p 00038000 08:02 14419922                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/internals.cpython-38-x86_64-linux-gnu.so
+7f7878c39000-7f7878c3a000 rw-p 00000000 00:00 0 
+7f7878c3a000-7f7878c41000 r--p 00000000 08:02 14419793                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/writers.cpython-38-x86_64-linux-gnu.so
+7f7878c41000-7f7878c5f000 r-xp 00007000 08:02 14419793                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/writers.cpython-38-x86_64-linux-gnu.so
+7f7878c5f000-7f7878c66000 r--p 00025000 08:02 14419793                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/writers.cpython-38-x86_64-linux-gnu.so
+7f7878c66000-7f7878c67000 ---p 0002c000 08:02 14419793                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/writers.cpython-38-x86_64-linux-gnu.so
+7f7878c67000-7f7878c68000 r--p 0002c000 08:02 14419793                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/writers.cpython-38-x86_64-linux-gnu.so
+7f7878c68000-7f7878c6c000 rw-p 0002d000 08:02 14419793                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/writers.cpython-38-x86_64-linux-gnu.so
+7f7878c6c000-7f7878cac000 rw-p 00000000 00:00 0 
+7f7878cac000-7f7878caf000 r--p 00000000 08:02 14419726                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/indexing.cpython-38-x86_64-linux-gnu.so
+7f7878caf000-7f7878cb4000 r-xp 00003000 08:02 14419726                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/indexing.cpython-38-x86_64-linux-gnu.so
+7f7878cb4000-7f7878cb6000 r--p 00008000 08:02 14419726                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/indexing.cpython-38-x86_64-linux-gnu.so
+7f7878cb6000-7f7878cb7000 r--p 00009000 08:02 14419726                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/indexing.cpython-38-x86_64-linux-gnu.so
+7f7878cb7000-7f7878cb8000 rw-p 0000a000 08:02 14419726                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/indexing.cpython-38-x86_64-linux-gnu.so
+7f7878cb8000-7f7878e38000 rw-p 00000000 00:00 0 
+7f7878e38000-7f7878e42000 r--p 00000000 08:02 14420322                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/sparse.cpython-38-x86_64-linux-gnu.so
+7f7878e42000-7f7878f03000 r-xp 0000a000 08:02 14420322                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/sparse.cpython-38-x86_64-linux-gnu.so
+7f7878f03000-7f7878f11000 r--p 000cb000 08:02 14420322                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/sparse.cpython-38-x86_64-linux-gnu.so
+7f7878f11000-7f7878f12000 r--p 000d8000 08:02 14420322                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/sparse.cpython-38-x86_64-linux-gnu.so
+7f7878f12000-7f7878f18000 rw-p 000d9000 08:02 14420322                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/sparse.cpython-38-x86_64-linux-gnu.so
+7f7878f18000-7f7878fda000 rw-p 00000000 00:00 0 
+7f7878fda000-7f7878fe9000 r--p 00000000 08:02 14420435                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/join.cpython-38-x86_64-linux-gnu.so
+7f7878fe9000-7f787923b000 r-xp 0000f000 08:02 14420435                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/join.cpython-38-x86_64-linux-gnu.so
+7f787923b000-7f7879257000 r--p 00261000 08:02 14420435                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/join.cpython-38-x86_64-linux-gnu.so
+7f7879257000-7f7879258000 r--p 0027c000 08:02 14420435                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/join.cpython-38-x86_64-linux-gnu.so
+7f7879258000-7f7879260000 rw-p 0027d000 08:02 14420435                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/join.cpython-38-x86_64-linux-gnu.so
+7f7879260000-7f7879264000 rw-p 00000000 00:00 0 
+7f7879264000-7f787926f000 r--p 00000000 08:02 14420317                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/index.cpython-38-x86_64-linux-gnu.so
+7f787926f000-7f78792e4000 r-xp 0000b000 08:02 14420317                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/index.cpython-38-x86_64-linux-gnu.so
+7f78792e4000-7f78792f3000 r--p 00080000 08:02 14420317                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/index.cpython-38-x86_64-linux-gnu.so
+7f78792f3000-7f78792f4000 r--p 0008e000 08:02 14420317                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/index.cpython-38-x86_64-linux-gnu.so
+7f78792f4000-7f78792fc000 rw-p 0008f000 08:02 14420317                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/index.cpython-38-x86_64-linux-gnu.so
+7f78792fc000-7f78793fe000 rw-p 00000000 00:00 0 
+7f78793fe000-7f7879400000 r--p 00000000 08:02 789654                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/move.cpython-38-x86_64-linux-gnu.so
+7f7879400000-7f7879414000 r-xp 00002000 08:02 789654                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/move.cpython-38-x86_64-linux-gnu.so
+7f7879414000-7f7879416000 r--p 00016000 08:02 789654                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/move.cpython-38-x86_64-linux-gnu.so
+7f7879416000-7f7879417000 ---p 00018000 08:02 789654                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/move.cpython-38-x86_64-linux-gnu.so
+7f7879417000-7f7879418000 r--p 00018000 08:02 789654                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/move.cpython-38-x86_64-linux-gnu.so
+7f7879418000-7f787941c000 rw-p 00019000 08:02 789654                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/move.cpython-38-x86_64-linux-gnu.so
+7f787941c000-7f787941e000 r--p 00000000 08:02 789639                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce_axis.cpython-38-x86_64-linux-gnu.so
+7f787941e000-7f7879424000 r-xp 00002000 08:02 789639                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce_axis.cpython-38-x86_64-linux-gnu.so
+7f7879424000-7f7879425000 r--p 00008000 08:02 789639                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce_axis.cpython-38-x86_64-linux-gnu.so
+7f7879425000-7f7879426000 r--p 00008000 08:02 789639                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce_axis.cpython-38-x86_64-linux-gnu.so
+7f7879426000-7f7879428000 rw-p 00009000 08:02 789639                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce_axis.cpython-38-x86_64-linux-gnu.so
+7f7879428000-7f787942a000 r--p 00000000 08:02 789640                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/reduce.cpython-38-x86_64-linux-gnu.so
+7f787942a000-7f787943d000 r-xp 00002000 08:02 789640                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/reduce.cpython-38-x86_64-linux-gnu.so
+7f787943d000-7f7879440000 r--p 00015000 08:02 789640                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/reduce.cpython-38-x86_64-linux-gnu.so
+7f7879440000-7f7879441000 r--p 00017000 08:02 789640                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/reduce.cpython-38-x86_64-linux-gnu.so
+7f7879441000-7f7879445000 rw-p 00018000 08:02 789640                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/reduce.cpython-38-x86_64-linux-gnu.so
+7f7879445000-7f7879485000 rw-p 00000000 00:00 0 
+7f7879485000-7f787948c000 r--p 00000000 08:02 14419830                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops.cpython-38-x86_64-linux-gnu.so
+7f787948c000-7f78794ae000 r-xp 00007000 08:02 14419830                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops.cpython-38-x86_64-linux-gnu.so
+7f78794ae000-7f78794b5000 r--p 00029000 08:02 14419830                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops.cpython-38-x86_64-linux-gnu.so
+7f78794b5000-7f78794b6000 r--p 0002f000 08:02 14419830                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops.cpython-38-x86_64-linux-gnu.so
+7f78794b6000-7f78794b9000 rw-p 00030000 08:02 14419830                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops.cpython-38-x86_64-linux-gnu.so
+7f78794b9000-7f787953a000 rw-p 00000000 00:00 0 
+7f787953a000-7f7879540000 r--p 00000000 08:02 14419790                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashing.cpython-38-x86_64-linux-gnu.so
+7f7879540000-7f7879559000 r-xp 00006000 08:02 14419790                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashing.cpython-38-x86_64-linux-gnu.so
+7f7879559000-7f787955f000 r--p 0001f000 08:02 14419790                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashing.cpython-38-x86_64-linux-gnu.so
+7f787955f000-7f7879560000 ---p 00025000 08:02 14419790                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashing.cpython-38-x86_64-linux-gnu.so
+7f7879560000-7f7879561000 r--p 00025000 08:02 14419790                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashing.cpython-38-x86_64-linux-gnu.so
+7f7879561000-7f7879564000 rw-p 00026000 08:02 14419790                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashing.cpython-38-x86_64-linux-gnu.so
+7f7879564000-7f7879568000 r--p 00000000 08:02 14419749                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/properties.cpython-38-x86_64-linux-gnu.so
+7f7879568000-7f7879571000 r-xp 00004000 08:02 14419749                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/properties.cpython-38-x86_64-linux-gnu.so
+7f7879571000-7f7879573000 r--p 0000d000 08:02 14419749                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/properties.cpython-38-x86_64-linux-gnu.so
+7f7879573000-7f7879574000 ---p 0000f000 08:02 14419749                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/properties.cpython-38-x86_64-linux-gnu.so
+7f7879574000-7f7879575000 r--p 0000f000 08:02 14419749                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/properties.cpython-38-x86_64-linux-gnu.so
+7f7879575000-7f7879576000 rw-p 00010000 08:02 14419749                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/properties.cpython-38-x86_64-linux-gnu.so
+7f7879576000-7f78795b6000 rw-p 00000000 00:00 0 
+7f78795b6000-7f78795c8000 r--p 00000000 08:02 14420365                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/algos.cpython-38-x86_64-linux-gnu.so
+7f78795c8000-7f7879726000 r-xp 00012000 08:02 14420365                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/algos.cpython-38-x86_64-linux-gnu.so
+7f7879726000-7f7879741000 r--p 00170000 08:02 14420365                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/algos.cpython-38-x86_64-linux-gnu.so
+7f7879741000-7f7879742000 ---p 0018b000 08:02 14420365                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/algos.cpython-38-x86_64-linux-gnu.so
+7f7879742000-7f7879743000 r--p 0018b000 08:02 14420365                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/algos.cpython-38-x86_64-linux-gnu.so
+7f7879743000-7f787974e000 rw-p 0018c000 08:02 14420365                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/algos.cpython-38-x86_64-linux-gnu.so
+7f787974e000-7f7879791000 rw-p 00000000 00:00 0 
+7f7879791000-7f78797a1000 r--p 00000000 08:02 14420382                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/interval.cpython-38-x86_64-linux-gnu.so
+7f78797a1000-7f787989f000 r-xp 00010000 08:02 14420382                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/interval.cpython-38-x86_64-linux-gnu.so
+7f787989f000-7f78798c0000 r--p 0010e000 08:02 14420382                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/interval.cpython-38-x86_64-linux-gnu.so
+7f78798c0000-7f78798c1000 ---p 0012f000 08:02 14420382                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/interval.cpython-38-x86_64-linux-gnu.so
+7f78798c1000-7f78798c2000 r--p 0012f000 08:02 14420382                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/interval.cpython-38-x86_64-linux-gnu.so
+7f78798c2000-7f78798ce000 rw-p 00130000 08:02 14420382                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/interval.cpython-38-x86_64-linux-gnu.so
+7f78798ce000-7f78798d0000 rw-p 00000000 00:00 0 
+7f78798d0000-7f78798d8000 r--p 00000000 08:02 14419972                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslib.cpython-38-x86_64-linux-gnu.so
+7f78798d8000-7f787990a000 r-xp 00008000 08:02 14419972                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslib.cpython-38-x86_64-linux-gnu.so
+7f787990a000-7f7879912000 r--p 0003a000 08:02 14419972                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslib.cpython-38-x86_64-linux-gnu.so
+7f7879912000-7f7879913000 r--p 00041000 08:02 14419972                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslib.cpython-38-x86_64-linux-gnu.so
+7f7879913000-7f7879918000 rw-p 00042000 08:02 14419972                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslib.cpython-38-x86_64-linux-gnu.so
+7f7879918000-7f7879959000 rw-p 00000000 00:00 0 
+7f7879959000-7f7879967000 r--p 00000000 08:02 14420238                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/lib.cpython-38-x86_64-linux-gnu.so
+7f7879967000-7f78799bf000 r-xp 0000e000 08:02 14420238                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/lib.cpython-38-x86_64-linux-gnu.so
+7f78799bf000-7f78799cf000 r--p 00066000 08:02 14420238                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/lib.cpython-38-x86_64-linux-gnu.so
+7f78799cf000-7f78799d0000 r--p 00075000 08:02 14420238                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/lib.cpython-38-x86_64-linux-gnu.so
+7f78799d0000-7f78799dc000 rw-p 00076000 08:02 14420238                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/lib.cpython-38-x86_64-linux-gnu.so
+7f78799dc000-7f78799de000 rw-p 00000000 00:00 0 
+7f78799de000-7f78799e9000 r--p 00000000 08:02 14420288                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashtable.cpython-38-x86_64-linux-gnu.so
+7f78799e9000-7f7879a51000 r-xp 0000b000 08:02 14420288                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashtable.cpython-38-x86_64-linux-gnu.so
+7f7879a51000-7f7879a60000 r--p 00073000 08:02 14420288                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashtable.cpython-38-x86_64-linux-gnu.so
+7f7879a60000-7f7879a61000 r--p 00081000 08:02 14420288                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashtable.cpython-38-x86_64-linux-gnu.so
+7f7879a61000-7f7879a6c000 rw-p 00082000 08:02 14420288                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/hashtable.cpython-38-x86_64-linux-gnu.so
+7f7879a6c000-7f7879a6d000 rw-p 00000000 00:00 0 
+7f7879a6d000-7f7879a75000 r--p 00000000 08:02 14419735                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/resolution.cpython-38-x86_64-linux-gnu.so
+7f7879a75000-7f7879a99000 r-xp 00008000 08:02 14419735                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/resolution.cpython-38-x86_64-linux-gnu.so
+7f7879a99000-7f7879aa2000 r--p 0002c000 08:02 14419735                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/resolution.cpython-38-x86_64-linux-gnu.so
+7f7879aa2000-7f7879aa3000 r--p 00034000 08:02 14419735                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/resolution.cpython-38-x86_64-linux-gnu.so
+7f7879aa3000-7f7879aa8000 rw-p 00035000 08:02 14419735                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/resolution.cpython-38-x86_64-linux-gnu.so
+7f7879aa8000-7f7879ab1000 r--p 00000000 08:02 14419982                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timestamps.cpython-38-x86_64-linux-gnu.so
+7f7879ab1000-7f7879adc000 r-xp 00009000 08:02 14419982                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timestamps.cpython-38-x86_64-linux-gnu.so
+7f7879adc000-7f7879ae5000 r--p 00034000 08:02 14419982                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timestamps.cpython-38-x86_64-linux-gnu.so
+7f7879ae5000-7f7879ae6000 r--p 0003c000 08:02 14419982                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timestamps.cpython-38-x86_64-linux-gnu.so
+7f7879ae6000-7f7879aee000 rw-p 0003d000 08:02 14419982                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timestamps.cpython-38-x86_64-linux-gnu.so
+7f7879aee000-7f7879aef000 rw-p 00000000 00:00 0 
+7f7879aef000-7f7879afa000 r--p 00000000 08:02 14420234                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/period.cpython-38-x86_64-linux-gnu.so
+7f7879afa000-7f7879b3c000 r-xp 0000b000 08:02 14420234                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/period.cpython-38-x86_64-linux-gnu.so
+7f7879b3c000-7f7879b4e000 r--p 0004d000 08:02 14420234                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/period.cpython-38-x86_64-linux-gnu.so
+7f7879b4e000-7f7879b4f000 r--p 0005e000 08:02 14420234                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/period.cpython-38-x86_64-linux-gnu.so
+7f7879b4f000-7f7879b57000 rw-p 0005f000 08:02 14420234                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/period.cpython-38-x86_64-linux-gnu.so
+7f7879b57000-7f7879b58000 rw-p 00000000 00:00 0 
+7f7879b58000-7f7879b5d000 r--p 00000000 08:02 14419778                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/frequencies.cpython-38-x86_64-linux-gnu.so
+7f7879b5d000-7f7879b6f000 r-xp 00005000 08:02 14419778                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/frequencies.cpython-38-x86_64-linux-gnu.so
+7f7879b6f000-7f7879b73000 r--p 00017000 08:02 14419778                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/frequencies.cpython-38-x86_64-linux-gnu.so
+7f7879b73000-7f7879b74000 r--p 0001a000 08:02 14419778                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/frequencies.cpython-38-x86_64-linux-gnu.so
+7f7879b74000-7f7879b77000 rw-p 0001b000 08:02 14419778                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/frequencies.cpython-38-x86_64-linux-gnu.so
+7f7879b77000-7f7879b83000 r--p 00000000 08:02 14420182                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/parsing.cpython-38-x86_64-linux-gnu.so
+7f7879b83000-7f7879bc6000 r-xp 0000c000 08:02 14420182                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/parsing.cpython-38-x86_64-linux-gnu.so
+7f7879bc6000-7f7879bd2000 r--p 0004f000 08:02 14420182                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/parsing.cpython-38-x86_64-linux-gnu.so
+7f7879bd2000-7f7879bd3000 r--p 0005a000 08:02 14420182                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/parsing.cpython-38-x86_64-linux-gnu.so
+7f7879bd3000-7f7879bda000 rw-p 0005b000 08:02 14420182                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/parsing.cpython-38-x86_64-linux-gnu.so
+7f7879bda000-7f7879bdb000 rw-p 00000000 00:00 0 
+7f7879bdb000-7f7879be2000 r--p 00000000 08:02 14419909                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/fields.cpython-38-x86_64-linux-gnu.so
+7f7879be2000-7f7879c09000 r-xp 00007000 08:02 14419909                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/fields.cpython-38-x86_64-linux-gnu.so
+7f7879c09000-7f7879c10000 r--p 0002e000 08:02 14419909                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/fields.cpython-38-x86_64-linux-gnu.so
+7f7879c10000-7f7879c11000 ---p 00035000 08:02 14419909                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/fields.cpython-38-x86_64-linux-gnu.so
+7f7879c11000-7f7879c12000 r--p 00035000 08:02 14419909                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/fields.cpython-38-x86_64-linux-gnu.so
+7f7879c12000-7f7879c16000 rw-p 00036000 08:02 14419909                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/fields.cpython-38-x86_64-linux-gnu.so
+7f7879c16000-7f7879c57000 rw-p 00000000 00:00 0 
+7f7879c57000-7f7879c62000 r--p 00000000 08:02 14419990                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/strptime.cpython-38-x86_64-linux-gnu.so
+7f7879c62000-7f7879ca2000 r-xp 0000b000 08:02 14419990                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/strptime.cpython-38-x86_64-linux-gnu.so
+7f7879ca2000-7f7879cac000 r--p 0004b000 08:02 14419990                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/strptime.cpython-38-x86_64-linux-gnu.so
+7f7879cac000-7f7879cad000 r--p 00054000 08:02 14419990                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/strptime.cpython-38-x86_64-linux-gnu.so
+7f7879cad000-7f7879cb4000 rw-p 00055000 08:02 14419990                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/strptime.cpython-38-x86_64-linux-gnu.so
+7f7879cb4000-7f7879cb5000 rw-p 00000000 00:00 0 
+7f7879cb5000-7f7879cb9000 r--p 00000000 08:02 14419757                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/ccalendar.cpython-38-x86_64-linux-gnu.so
+7f7879cb9000-7f7879cc3000 r-xp 00004000 08:02 14419757                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/ccalendar.cpython-38-x86_64-linux-gnu.so
+7f7879cc3000-7f7879cc5000 r--p 0000e000 08:02 14419757                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/ccalendar.cpython-38-x86_64-linux-gnu.so
+7f7879cc5000-7f7879cc6000 r--p 0000f000 08:02 14419757                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/ccalendar.cpython-38-x86_64-linux-gnu.so
+7f7879cc6000-7f7879cc8000 rw-p 00010000 08:02 14419757                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/ccalendar.cpython-38-x86_64-linux-gnu.so
+7f7879cc8000-7f7879cd4000 r--p 00000000 08:02 14420143                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/offsets.cpython-38-x86_64-linux-gnu.so
+7f7879cd4000-7f7879d11000 r-xp 0000c000 08:02 14420143                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/offsets.cpython-38-x86_64-linux-gnu.so
+7f7879d11000-7f7879d1d000 r--p 00049000 08:02 14420143                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/offsets.cpython-38-x86_64-linux-gnu.so
+7f7879d1d000-7f7879d1e000 ---p 00055000 08:02 14420143                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/offsets.cpython-38-x86_64-linux-gnu.so
+7f7879d1e000-7f7879d1f000 r--p 00055000 08:02 14420143                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/offsets.cpython-38-x86_64-linux-gnu.so
+7f7879d1f000-7f7879d28000 rw-p 00056000 08:02 14420143                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/offsets.cpython-38-x86_64-linux-gnu.so
+7f7879d28000-7f7879d29000 rw-p 00000000 00:00 0 
+7f7879d29000-7f7879d35000 r--p 00000000 08:02 14420254                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timedeltas.cpython-38-x86_64-linux-gnu.so
+7f7879d35000-7f7879d7c000 r-xp 0000c000 08:02 14420254                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timedeltas.cpython-38-x86_64-linux-gnu.so
+7f7879d7c000-7f7879d8a000 r--p 00053000 08:02 14420254                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timedeltas.cpython-38-x86_64-linux-gnu.so
+7f7879d8a000-7f7879d8b000 r--p 00060000 08:02 14420254                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timedeltas.cpython-38-x86_64-linux-gnu.so
+7f7879d8b000-7f7879d93000 rw-p 00061000 08:02 14420254                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timedeltas.cpython-38-x86_64-linux-gnu.so
+7f7879d93000-7f7879d94000 rw-p 00000000 00:00 0 
+7f7879d94000-7f7879d9c000 r--p 00000000 08:02 14419968                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/tzconversion.cpython-38-x86_64-linux-gnu.so
+7f7879d9c000-7f7879dce000 r-xp 00008000 08:02 14419968                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/tzconversion.cpython-38-x86_64-linux-gnu.so
+7f7879dce000-7f7879dd6000 r--p 0003a000 08:02 14419968                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/tzconversion.cpython-38-x86_64-linux-gnu.so
+7f7879dd6000-7f7879dd7000 r--p 00041000 08:02 14419968                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/tzconversion.cpython-38-x86_64-linux-gnu.so
+7f7879dd7000-7f7879ddb000 rw-p 00042000 08:02 14419968                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/tzconversion.cpython-38-x86_64-linux-gnu.so
+7f7879ddb000-7f7879ddc000 rw-p 00000000 00:00 0 
+7f7879ddc000-7f7879de3000 r--p 00000000 08:02 14419854                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timezones.cpython-38-x86_64-linux-gnu.so
+7f7879de3000-7f7879e05000 r-xp 00007000 08:02 14419854                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timezones.cpython-38-x86_64-linux-gnu.so
+7f7879e05000-7f7879e0c000 r--p 00029000 08:02 14419854                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timezones.cpython-38-x86_64-linux-gnu.so
+7f7879e0c000-7f7879e0d000 ---p 00030000 08:02 14419854                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timezones.cpython-38-x86_64-linux-gnu.so
+7f7879e0d000-7f7879e0e000 r--p 00030000 08:02 14419854                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timezones.cpython-38-x86_64-linux-gnu.so
+7f7879e0e000-7f7879e12000 rw-p 00031000 08:02 14419854                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/timezones.cpython-38-x86_64-linux-gnu.so
+7f7879e12000-7f7879e52000 rw-p 00000000 00:00 0 
+7f7879e52000-7f7879e59000 r--p 00000000 08:02 14419791                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/missing.cpython-38-x86_64-linux-gnu.so
+7f7879e59000-7f7879e73000 r-xp 00007000 08:02 14419791                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/missing.cpython-38-x86_64-linux-gnu.so
+7f7879e73000-7f7879e79000 r--p 00021000 08:02 14419791                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/missing.cpython-38-x86_64-linux-gnu.so
+7f7879e79000-7f7879e7a000 r--p 00026000 08:02 14419791                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/missing.cpython-38-x86_64-linux-gnu.so
+7f7879e7a000-7f7879e7e000 rw-p 00027000 08:02 14419791                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/missing.cpython-38-x86_64-linux-gnu.so
+7f7879e7e000-7f7879e7f000 rw-p 00000000 00:00 0 
+7f7879e7f000-7f7879e87000 r--p 00000000 08:02 14419709                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/nattype.cpython-38-x86_64-linux-gnu.so
+7f7879e87000-7f7879e9f000 r-xp 00008000 08:02 14419709                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/nattype.cpython-38-x86_64-linux-gnu.so
+7f7879e9f000-7f7879ea7000 r--p 00020000 08:02 14419709                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/nattype.cpython-38-x86_64-linux-gnu.so
+7f7879ea7000-7f7879ea8000 ---p 00028000 08:02 14419709                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/nattype.cpython-38-x86_64-linux-gnu.so
+7f7879ea8000-7f7879ea9000 r--p 00028000 08:02 14419709                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/nattype.cpython-38-x86_64-linux-gnu.so
+7f7879ea9000-7f7879ead000 rw-p 00029000 08:02 14419709                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/nattype.cpython-38-x86_64-linux-gnu.so
+7f7879ead000-7f7879eae000 rw-p 00000000 00:00 0 
+7f7879eae000-7f7879eb6000 r--p 00000000 08:02 14419697                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/c_timestamp.cpython-38-x86_64-linux-gnu.so
+7f7879eb6000-7f7879edb000 r-xp 00008000 08:02 14419697                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/c_timestamp.cpython-38-x86_64-linux-gnu.so
+7f7879edb000-7f7879ee3000 r--p 0002d000 08:02 14419697                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/c_timestamp.cpython-38-x86_64-linux-gnu.so
+7f7879ee3000-7f7879ee4000 ---p 00035000 08:02 14419697                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/c_timestamp.cpython-38-x86_64-linux-gnu.so
+7f7879ee4000-7f7879ee5000 r--p 00035000 08:02 14419697                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/c_timestamp.cpython-38-x86_64-linux-gnu.so
+7f7879ee5000-7f7879ee9000 rw-p 00036000 08:02 14419697                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/c_timestamp.cpython-38-x86_64-linux-gnu.so
+7f7879ee9000-7f7879eea000 rw-p 00000000 00:00 0 
+7f7879eea000-7f7879ef2000 r--p 00000000 08:02 14419948                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/conversion.cpython-38-x86_64-linux-gnu.so
+7f7879ef2000-7f7879f1d000 r-xp 00008000 08:02 14419948                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/conversion.cpython-38-x86_64-linux-gnu.so
+7f7879f1d000-7f7879f26000 r--p 00033000 08:02 14419948                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/conversion.cpython-38-x86_64-linux-gnu.so
+7f7879f26000-7f7879f27000 r--p 0003b000 08:02 14419948                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/conversion.cpython-38-x86_64-linux-gnu.so
+7f7879f27000-7f7879f2b000 rw-p 0003c000 08:02 14419948                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/conversion.cpython-38-x86_64-linux-gnu.so
+7f7879f2b000-7f7879fec000 rw-p 00000000 00:00 0 
+7f7879fec000-7f7879ff9000 r--p 00000000 08:02 15074189                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/backends/_backend_agg.cpython-38-x86_64-linux-gnu.so
+7f7879ff9000-7f787a03a000 r-xp 0000d000 08:02 15074189                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/backends/_backend_agg.cpython-38-x86_64-linux-gnu.so
+7f787a03a000-7f787a040000 r--p 0004e000 08:02 15074189                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/backends/_backend_agg.cpython-38-x86_64-linux-gnu.so
+7f787a040000-7f787a041000 ---p 00054000 08:02 15074189                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/backends/_backend_agg.cpython-38-x86_64-linux-gnu.so
+7f787a041000-7f787a042000 r--p 00054000 08:02 15074189                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/backends/_backend_agg.cpython-38-x86_64-linux-gnu.so
+7f787a042000-7f787a043000 rw-p 00055000 08:02 15074189                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/backends/_backend_agg.cpython-38-x86_64-linux-gnu.so
+7f787a043000-7f787a2c4000 rw-p 00000000 00:00 0 
+7f787a2c4000-7f787a2ce000 r--p 00000000 08:02 15074166                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_image.cpython-38-x86_64-linux-gnu.so
+7f787a2ce000-7f787a2f8000 r-xp 0000a000 08:02 15074166                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_image.cpython-38-x86_64-linux-gnu.so
+7f787a2f8000-7f787a2fd000 r--p 00034000 08:02 15074166                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_image.cpython-38-x86_64-linux-gnu.so
+7f787a2fd000-7f787a2fe000 ---p 00039000 08:02 15074166                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_image.cpython-38-x86_64-linux-gnu.so
+7f787a2fe000-7f787a2ff000 r--p 00039000 08:02 15074166                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_image.cpython-38-x86_64-linux-gnu.so
+7f787a2ff000-7f787a300000 rw-p 0003a000 08:02 15074166                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_image.cpython-38-x86_64-linux-gnu.so
+7f787a300000-7f787a700000 rw-p 00000000 00:00 0 
+7f787a700000-7f787b275000 r-xp 00000000 08:02 14421721                   /home/piai/anaconda3/lib/libmkl_vml_avx512.so
+7f787b275000-7f787b475000 ---p 00b75000 08:02 14421721                   /home/piai/anaconda3/lib/libmkl_vml_avx512.so
+7f787b475000-7f787b478000 r--p 00b75000 08:02 14421721                   /home/piai/anaconda3/lib/libmkl_vml_avx512.so
+7f787b478000-7f787b48f000 rw-p 00b78000 08:02 14421721                   /home/piai/anaconda3/lib/libmkl_vml_avx512.so
+7f787b48f000-7f787b490000 rw-p 00000000 00:00 0 
+7f787b490000-7f787bde7000 r-xp 00000000 08:02 14421717                   /home/piai/anaconda3/lib/libmkl_intel_lp64.so
+7f787bde7000-7f787bfe7000 ---p 00957000 08:02 14421717                   /home/piai/anaconda3/lib/libmkl_intel_lp64.so
+7f787bfe7000-7f787bfe8000 r--p 00957000 08:02 14421717                   /home/piai/anaconda3/lib/libmkl_intel_lp64.so
+7f787bfe8000-7f787bffa000 rw-p 00958000 08:02 14421717                   /home/piai/anaconda3/lib/libmkl_intel_lp64.so
+7f787bffa000-7f787c000000 rw-p 00000000 00:00 0 
+7f787c000000-7f787c021000 rw-p 00000000 00:00 0 
+7f787c021000-7f7880000000 ---p 00000000 00:00 0 
+7f7880000000-7f7880021000 rw-p 00000000 00:00 0 
+7f7880021000-7f7884000000 ---p 00000000 00:00 0 
+7f7884000000-7f7885fd8000 rw-p 00000000 00:00 0 
+7f7885fd8000-7f7888000000 ---p 00000000 00:00 0 
+7f7888000000-7f7888a27000 rw-p 00000000 00:00 0 
+7f7888a27000-7f788c000000 ---p 00000000 00:00 0 
+7f788c000000-7f788dae4000 rw-p 00000000 00:00 0 
+7f788dae4000-7f7890000000 ---p 00000000 00:00 0 
+7f7890000000-7f7891425000 rw-p 00000000 00:00 0 
+7f7891425000-7f7894000000 ---p 00000000 00:00 0 
+7f7894000000-7f7894021000 rw-p 00000000 00:00 0 
+7f7894021000-7f7898000000 ---p 00000000 00:00 0 
+7f7898000000-7f7898021000 rw-p 00000000 00:00 0 
+7f7898021000-7f789c000000 ---p 00000000 00:00 0 
+7f789c000000-7f789c021000 rw-p 00000000 00:00 0 
+7f789c021000-7f78a0000000 ---p 00000000 00:00 0 
+7f78a0000000-7f78a0021000 rw-p 00000000 00:00 0 
+7f78a0021000-7f78a4000000 ---p 00000000 00:00 0 
+7f78a4000000-7f78a4021000 rw-p 00000000 00:00 0 
+7f78a4021000-7f78a8000000 ---p 00000000 00:00 0 
+7f78a8000000-7f78a8021000 rw-p 00000000 00:00 0 
+7f78a8021000-7f78ac000000 ---p 00000000 00:00 0 
+7f78ac000000-7f78ac021000 rw-p 00000000 00:00 0 
+7f78ac021000-7f78b0000000 ---p 00000000 00:00 0 
+7f78b0000000-7f78b0021000 rw-p 00000000 00:00 0 
+7f78b0021000-7f78b4000000 ---p 00000000 00:00 0 
+7f78b4005000-7f78b4009000 r--p 00000000 08:02 14419732                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops_dispatch.cpython-38-x86_64-linux-gnu.so
+7f78b4009000-7f78b400f000 r-xp 00004000 08:02 14419732                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops_dispatch.cpython-38-x86_64-linux-gnu.so
+7f78b400f000-7f78b4011000 r--p 0000a000 08:02 14419732                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops_dispatch.cpython-38-x86_64-linux-gnu.so
+7f78b4011000-7f78b4012000 r--p 0000b000 08:02 14419732                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops_dispatch.cpython-38-x86_64-linux-gnu.so
+7f78b4012000-7f78b4014000 rw-p 0000c000 08:02 14419732                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/ops_dispatch.cpython-38-x86_64-linux-gnu.so
+7f78b4014000-7f78b4018000 r--p 00000000 08:02 14419730                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/np_datetime.cpython-38-x86_64-linux-gnu.so
+7f78b4018000-7f78b401e000 r-xp 00004000 08:02 14419730                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/np_datetime.cpython-38-x86_64-linux-gnu.so
+7f78b401e000-7f78b4020000 r--p 0000a000 08:02 14419730                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/np_datetime.cpython-38-x86_64-linux-gnu.so
+7f78b4020000-7f78b4021000 r--p 0000b000 08:02 14419730                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/np_datetime.cpython-38-x86_64-linux-gnu.so
+7f78b4021000-7f78b4022000 rw-p 0000c000 08:02 14419730                   /home/piai/anaconda3/lib/python3.8/site-packages/pandas/_libs/tslibs/np_datetime.cpython-38-x86_64-linux-gnu.so
+7f78b4022000-7f78b4024000 r--p 00000000 08:02 14682972                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_csv.cpython-38-x86_64-linux-gnu.so
+7f78b4024000-7f78b4029000 r-xp 00002000 08:02 14682972                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_csv.cpython-38-x86_64-linux-gnu.so
+7f78b4029000-7f78b402b000 r--p 00007000 08:02 14682972                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_csv.cpython-38-x86_64-linux-gnu.so
+7f78b402b000-7f78b402c000 ---p 00009000 08:02 14682972                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_csv.cpython-38-x86_64-linux-gnu.so
+7f78b402c000-7f78b402d000 r--p 00009000 08:02 14682972                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_csv.cpython-38-x86_64-linux-gnu.so
+7f78b402d000-7f78b402e000 rw-p 0000a000 08:02 14682972                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_csv.cpython-38-x86_64-linux-gnu.so
+7f78b402e000-7f78b4051000 r-xp 00000000 08:02 2099278                    /home/piai/anaconda3/lib/python3.8/site-packages/wordcloud/query_integral_image.cpython-38-x86_64-linux-gnu.so
+7f78b4051000-7f78b4250000 ---p 00023000 08:02 2099278                    /home/piai/anaconda3/lib/python3.8/site-packages/wordcloud/query_integral_image.cpython-38-x86_64-linux-gnu.so
+7f78b4250000-7f78b4253000 rw-p 00022000 08:02 2099278                    /home/piai/anaconda3/lib/python3.8/site-packages/wordcloud/query_integral_image.cpython-38-x86_64-linux-gnu.so
+7f78b4253000-7f78b4294000 rw-p 00000000 00:00 0 
+7f78b4294000-7f78b429e000 r--p 00000000 08:02 14943178                   /home/piai/anaconda3/lib/libzstd.so.1.4.5
+7f78b429e000-7f78b4342000 r-xp 0000a000 08:02 14943178                   /home/piai/anaconda3/lib/libzstd.so.1.4.5
+7f78b4342000-7f78b4350000 r--p 000ae000 08:02 14943178                   /home/piai/anaconda3/lib/libzstd.so.1.4.5
+7f78b4350000-7f78b4351000 ---p 000bc000 08:02 14943178                   /home/piai/anaconda3/lib/libzstd.so.1.4.5
+7f78b4351000-7f78b4352000 r--p 000bc000 08:02 14943178                   /home/piai/anaconda3/lib/libzstd.so.1.4.5
+7f78b4352000-7f78b4353000 rw-p 000bd000 08:02 14943178                   /home/piai/anaconda3/lib/libzstd.so.1.4.5
+7f78b4353000-7f78b435d000 r--p 00000000 08:02 14288948                   /home/piai/anaconda3/lib/libtiff.so.5.5.0
+7f78b435d000-7f78b43a2000 r-xp 0000a000 08:02 14288948                   /home/piai/anaconda3/lib/libtiff.so.5.5.0
+7f78b43a2000-7f78b43ce000 r--p 0004f000 08:02 14288948                   /home/piai/anaconda3/lib/libtiff.so.5.5.0
+7f78b43ce000-7f78b43d2000 r--p 0007a000 08:02 14288948                   /home/piai/anaconda3/lib/libtiff.so.5.5.0
+7f78b43d2000-7f78b43d3000 rw-p 0007e000 08:02 14288948                   /home/piai/anaconda3/lib/libtiff.so.5.5.0
+7f78b43d3000-7f78b440e000 r-xp 00000000 08:02 524769                     /home/piai/anaconda3/lib/libjpeg.so.9.2.0
+7f78b440e000-7f78b460d000 ---p 0003b000 08:02 524769                     /home/piai/anaconda3/lib/libjpeg.so.9.2.0
+7f78b460d000-7f78b460e000 r--p 0003a000 08:02 524769                     /home/piai/anaconda3/lib/libjpeg.so.9.2.0
+7f78b460e000-7f78b460f000 rw-p 0003b000 08:02 524769                     /home/piai/anaconda3/lib/libjpeg.so.9.2.0
+7f78b460f000-7f78b4622000 r--p 00000000 08:02 15074788                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imaging.cpython-38-x86_64-linux-gnu.so
+7f78b4622000-7f78b4676000 r-xp 00013000 08:02 15074788                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imaging.cpython-38-x86_64-linux-gnu.so
+7f78b4676000-7f78b4685000 r--p 00067000 08:02 15074788                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imaging.cpython-38-x86_64-linux-gnu.so
+7f78b4685000-7f78b4689000 r--p 00075000 08:02 15074788                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imaging.cpython-38-x86_64-linux-gnu.so
+7f78b4689000-7f78b468c000 rw-p 00079000 08:02 15074788                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imaging.cpython-38-x86_64-linux-gnu.so
+7f78b468c000-7f78b46cd000 rw-p 00000000 00:00 0 
+7f78b46cd000-7f78b46d5000 r--p 00000000 08:02 15077104                   /home/piai/anaconda3/lib/python3.8/site-packages/kiwisolver.cpython-38-x86_64-linux-gnu.so
+7f78b46d5000-7f78b4700000 r-xp 00008000 08:02 15077104                   /home/piai/anaconda3/lib/python3.8/site-packages/kiwisolver.cpython-38-x86_64-linux-gnu.so
+7f78b4700000-7f78b4705000 r--p 00033000 08:02 15077104                   /home/piai/anaconda3/lib/python3.8/site-packages/kiwisolver.cpython-38-x86_64-linux-gnu.so
+7f78b4705000-7f78b4706000 ---p 00038000 08:02 15077104                   /home/piai/anaconda3/lib/python3.8/site-packages/kiwisolver.cpython-38-x86_64-linux-gnu.so
+7f78b4706000-7f78b4707000 r--p 00038000 08:02 15077104                   /home/piai/anaconda3/lib/python3.8/site-packages/kiwisolver.cpython-38-x86_64-linux-gnu.so
+7f78b4707000-7f78b4708000 rw-p 00039000 08:02 15077104                   /home/piai/anaconda3/lib/python3.8/site-packages/kiwisolver.cpython-38-x86_64-linux-gnu.so
+7f78b4708000-7f78b470e000 r--p 00000000 08:02 15338322                   /home/piai/anaconda3/lib/libpng16.so.16.37.0
+7f78b470e000-7f78b4734000 r-xp 00006000 08:02 15338322                   /home/piai/anaconda3/lib/libpng16.so.16.37.0
+7f78b4734000-7f78b473f000 r--p 0002c000 08:02 15338322                   /home/piai/anaconda3/lib/libpng16.so.16.37.0
+7f78b473f000-7f78b4740000 r--p 00036000 08:02 15338322                   /home/piai/anaconda3/lib/libpng16.so.16.37.0
+7f78b4740000-7f78b4741000 rw-p 00037000 08:02 15338322                   /home/piai/anaconda3/lib/libpng16.so.16.37.0
+7f78b4741000-7f78b474f000 r--p 00000000 08:02 656432                     /home/piai/anaconda3/lib/libfreetype.so.6.17.2
+7f78b474f000-7f78b47c5000 r-xp 0000e000 08:02 656432                     /home/piai/anaconda3/lib/libfreetype.so.6.17.2
+7f78b47c5000-7f78b47ed000 r--p 00084000 08:02 656432                     /home/piai/anaconda3/lib/libfreetype.so.6.17.2
+7f78b47ed000-7f78b47f4000 r--p 000ab000 08:02 656432                     /home/piai/anaconda3/lib/libfreetype.so.6.17.2
+7f78b47f4000-7f78b47f5000 rw-p 000b2000 08:02 656432                     /home/piai/anaconda3/lib/libfreetype.so.6.17.2
+7f78b47f5000-7f78b47fd000 r--p 00000000 08:02 15074134                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/ft2font.cpython-38-x86_64-linux-gnu.so
+7f78b47fd000-7f78b4809000 r-xp 00008000 08:02 15074134                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/ft2font.cpython-38-x86_64-linux-gnu.so
+7f78b4809000-7f78b480f000 r--p 00014000 08:02 15074134                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/ft2font.cpython-38-x86_64-linux-gnu.so
+7f78b480f000-7f78b4810000 ---p 0001a000 08:02 15074134                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/ft2font.cpython-38-x86_64-linux-gnu.so
+7f78b4810000-7f78b4811000 r--p 0001a000 08:02 15074134                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/ft2font.cpython-38-x86_64-linux-gnu.so
+7f78b4811000-7f78b4812000 rw-p 0001b000 08:02 15074134                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/ft2font.cpython-38-x86_64-linux-gnu.so
+7f78b4812000-7f78b4a13000 rw-p 00000000 00:00 0 
+7f78b4a13000-7f78b6b2e000 r-xp 00000000 08:02 14421729                   /home/piai/anaconda3/lib/libmkl_intel_thread.so
+7f78b6b2e000-7f78b6d2e000 ---p 0211b000 08:02 14421729                   /home/piai/anaconda3/lib/libmkl_intel_thread.so
+7f78b6d2e000-7f78b6d32000 r--p 0211b000 08:02 14421729                   /home/piai/anaconda3/lib/libmkl_intel_thread.so
+7f78b6d32000-7f78b6f9e000 rw-p 0211f000 08:02 14421729                   /home/piai/anaconda3/lib/libmkl_intel_thread.so
+7f78b6f9e000-7f78b6fe6000 rw-p 00000000 00:00 0 
+7f78b6fe6000-7f78b6ff3000 r--p 00000000 08:02 15077111                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_generator.cpython-38-x86_64-linux-gnu.so
+7f78b6ff3000-7f78b704f000 r-xp 0000d000 08:02 15077111                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_generator.cpython-38-x86_64-linux-gnu.so
+7f78b704f000-7f78b707d000 r--p 00069000 08:02 15077111                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_generator.cpython-38-x86_64-linux-gnu.so
+7f78b707d000-7f78b707e000 r--p 00096000 08:02 15077111                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_generator.cpython-38-x86_64-linux-gnu.so
+7f78b707e000-7f78b70a2000 rw-p 00097000 08:02 15077111                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_generator.cpython-38-x86_64-linux-gnu.so
+7f78b70a2000-7f78b70e3000 rw-p 00000000 00:00 0 
+7f78b70e3000-7f78b70e7000 r--p 00000000 08:02 15077038                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_sfc64.cpython-38-x86_64-linux-gnu.so
+7f78b70e7000-7f78b70ee000 r-xp 00004000 08:02 15077038                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_sfc64.cpython-38-x86_64-linux-gnu.so
+7f78b70ee000-7f78b70f0000 r--p 0000b000 08:02 15077038                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_sfc64.cpython-38-x86_64-linux-gnu.so
+7f78b70f0000-7f78b70f1000 ---p 0000d000 08:02 15077038                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_sfc64.cpython-38-x86_64-linux-gnu.so
+7f78b70f1000-7f78b70f2000 r--p 0000d000 08:02 15077038                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_sfc64.cpython-38-x86_64-linux-gnu.so
+7f78b70f2000-7f78b70f3000 rw-p 0000e000 08:02 15077038                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_sfc64.cpython-38-x86_64-linux-gnu.so
+7f78b70f3000-7f78b70f7000 r--p 00000000 08:02 15077039                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_pcg64.cpython-38-x86_64-linux-gnu.so
+7f78b70f7000-7f78b7101000 r-xp 00004000 08:02 15077039                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_pcg64.cpython-38-x86_64-linux-gnu.so
+7f78b7101000-7f78b7104000 r--p 0000e000 08:02 15077039                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_pcg64.cpython-38-x86_64-linux-gnu.so
+7f78b7104000-7f78b7105000 r--p 00010000 08:02 15077039                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_pcg64.cpython-38-x86_64-linux-gnu.so
+7f78b7105000-7f78b7107000 rw-p 00011000 08:02 15077039                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_pcg64.cpython-38-x86_64-linux-gnu.so
+7f78b7107000-7f78b710b000 r--p 00000000 08:02 15077042                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_philox.cpython-38-x86_64-linux-gnu.so
+7f78b710b000-7f78b7117000 r-xp 00004000 08:02 15077042                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_philox.cpython-38-x86_64-linux-gnu.so
+7f78b7117000-7f78b711b000 r--p 00010000 08:02 15077042                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_philox.cpython-38-x86_64-linux-gnu.so
+7f78b711b000-7f78b711c000 r--p 00013000 08:02 15077042                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_philox.cpython-38-x86_64-linux-gnu.so
+7f78b711c000-7f78b711e000 rw-p 00014000 08:02 15077042                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_philox.cpython-38-x86_64-linux-gnu.so
+7f78b711e000-7f78b7122000 r--p 00000000 08:02 15077044                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_mt19937.cpython-38-x86_64-linux-gnu.so
+7f78b7122000-7f78b7131000 r-xp 00004000 08:02 15077044                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_mt19937.cpython-38-x86_64-linux-gnu.so
+7f78b7131000-7f78b7139000 r--p 00013000 08:02 15077044                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_mt19937.cpython-38-x86_64-linux-gnu.so
+7f78b7139000-7f78b713a000 ---p 0001b000 08:02 15077044                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_mt19937.cpython-38-x86_64-linux-gnu.so
+7f78b713a000-7f78b713b000 r--p 0001b000 08:02 15077044                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_mt19937.cpython-38-x86_64-linux-gnu.so
+7f78b713b000-7f78b713d000 rw-p 0001c000 08:02 15077044                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_mt19937.cpython-38-x86_64-linux-gnu.so
+7f78b713d000-7f78b7142000 r--p 00000000 08:02 15077093                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bounded_integers.cpython-38-x86_64-linux-gnu.so
+7f78b7142000-7f78b7189000 r-xp 00005000 08:02 15077093                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bounded_integers.cpython-38-x86_64-linux-gnu.so
+7f78b7189000-7f78b7192000 r--p 0004c000 08:02 15077093                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bounded_integers.cpython-38-x86_64-linux-gnu.so
+7f78b7192000-7f78b7193000 r--p 00054000 08:02 15077093                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bounded_integers.cpython-38-x86_64-linux-gnu.so
+7f78b7193000-7f78b7194000 rw-p 00055000 08:02 15077093                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bounded_integers.cpython-38-x86_64-linux-gnu.so
+7f78b7194000-7f78b7195000 rw-p 00000000 00:00 0 
+7f78b7195000-7f78b7199000 r--p 00000000 08:02 15077088                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_common.cpython-38-x86_64-linux-gnu.so
+7f78b7199000-7f78b71c4000 r-xp 00004000 08:02 15077088                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_common.cpython-38-x86_64-linux-gnu.so
+7f78b71c4000-7f78b71c7000 r--p 0002f000 08:02 15077088                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_common.cpython-38-x86_64-linux-gnu.so
+7f78b71c7000-7f78b71c8000 ---p 00032000 08:02 15077088                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_common.cpython-38-x86_64-linux-gnu.so
+7f78b71c8000-7f78b71c9000 r--p 00032000 08:02 15077088                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_common.cpython-38-x86_64-linux-gnu.so
+7f78b71c9000-7f78b71cb000 rw-p 00033000 08:02 15077088                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_common.cpython-38-x86_64-linux-gnu.so
+7f78b71cb000-7f78b71d2000 r--p 00000000 08:02 15077076                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bit_generator.cpython-38-x86_64-linux-gnu.so
+7f78b71d2000-7f78b71ea000 r-xp 00007000 08:02 15077076                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bit_generator.cpython-38-x86_64-linux-gnu.so
+7f78b71ea000-7f78b71f2000 r--p 0001f000 08:02 15077076                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bit_generator.cpython-38-x86_64-linux-gnu.so
+7f78b71f2000-7f78b71f3000 r--p 00026000 08:02 15077076                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bit_generator.cpython-38-x86_64-linux-gnu.so
+7f78b71f3000-7f78b71f8000 rw-p 00027000 08:02 15077076                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/_bit_generator.cpython-38-x86_64-linux-gnu.so
+7f78b71f8000-7f78b7204000 r--p 00000000 08:02 15077109                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/mtrand.cpython-38-x86_64-linux-gnu.so
+7f78b7204000-7f78b7246000 r-xp 0000c000 08:02 15077109                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/mtrand.cpython-38-x86_64-linux-gnu.so
+7f78b7246000-7f78b7272000 r--p 0004e000 08:02 15077109                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/mtrand.cpython-38-x86_64-linux-gnu.so
+7f78b7272000-7f78b7273000 r--p 00079000 08:02 15077109                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/mtrand.cpython-38-x86_64-linux-gnu.so
+7f78b7273000-7f78b7298000 rw-p 0007a000 08:02 15077109                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/random/mtrand.cpython-38-x86_64-linux-gnu.so
+7f78b7298000-7f78b72da000 rw-p 00000000 00:00 0 
+7f78b72da000-7f78b72db000 r--p 00000000 08:02 15077041                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/fft/_pocketfft_internal.cpython-38-x86_64-linux-gnu.so
+7f78b72db000-7f78b72ed000 r-xp 00001000 08:02 15077041                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/fft/_pocketfft_internal.cpython-38-x86_64-linux-gnu.so
+7f78b72ed000-7f78b72ef000 r--p 00013000 08:02 15077041                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/fft/_pocketfft_internal.cpython-38-x86_64-linux-gnu.so
+7f78b72ef000-7f78b72f0000 r--p 00014000 08:02 15077041                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/fft/_pocketfft_internal.cpython-38-x86_64-linux-gnu.so
+7f78b72f0000-7f78b72f1000 rw-p 00015000 08:02 15077041                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/fft/_pocketfft_internal.cpython-38-x86_64-linux-gnu.so
+7f78b72f1000-7f78b73b1000 rw-p 00000000 00:00 0 
+7f78b73b1000-7f78b73ba000 r--p 00000000 08:02 15077050                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/_umath_linalg.cpython-38-x86_64-linux-gnu.so
+7f78b73ba000-7f78b73d5000 r-xp 00009000 08:02 15077050                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/_umath_linalg.cpython-38-x86_64-linux-gnu.so
+7f78b73d5000-7f78b73da000 r--p 00024000 08:02 15077050                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/_umath_linalg.cpython-38-x86_64-linux-gnu.so
+7f78b73da000-7f78b73db000 ---p 00029000 08:02 15077050                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/_umath_linalg.cpython-38-x86_64-linux-gnu.so
+7f78b73db000-7f78b73dc000 r--p 00029000 08:02 15077050                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/_umath_linalg.cpython-38-x86_64-linux-gnu.so
+7f78b73dc000-7f78b73dd000 rw-p 0002a000 08:02 15077050                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/_umath_linalg.cpython-38-x86_64-linux-gnu.so
+7f78b73dd000-7f78b751d000 rw-p 00000000 00:00 0 
+7f78b751d000-7f78b76e4000 r-xp 00000000 08:02 657685                     /home/piai/anaconda3/lib/libiomp5.so
+7f78b76e4000-7f78b78e4000 ---p 001c7000 08:02 657685                     /home/piai/anaconda3/lib/libiomp5.so
+7f78b78e4000-7f78b78e7000 r--p 001c7000 08:02 657685                     /home/piai/anaconda3/lib/libiomp5.so
+7f78b78e7000-7f78b78f1000 rw-p 001ca000 08:02 657685                     /home/piai/anaconda3/lib/libiomp5.so
+7f78b78f1000-7f78b791d000 rw-p 00000000 00:00 0 
+7f78b791d000-7f78b7de4000 r-xp 00000000 08:02 14421710                   /home/piai/anaconda3/lib/libmkl_rt.so
+7f78b7de4000-7f78b7fe4000 ---p 004c7000 08:02 14421710                   /home/piai/anaconda3/lib/libmkl_rt.so
+7f78b7fe4000-7f78b7fea000 r--p 004c7000 08:02 14421710                   /home/piai/anaconda3/lib/libmkl_rt.so
+7f78b7fea000-7f78b7fec000 rw-p 004cd000 08:02 14421710                   /home/piai/anaconda3/lib/libmkl_rt.so
+7f78b7fec000-7f78b8000000 rw-p 00000000 00:00 0 
+7f78b8000000-7f78b8021000 rw-p 00000000 00:00 0 
+7f78b8021000-7f78bc000000 ---p 00000000 00:00 0 
+7f78bc000000-7f78bc021000 rw-p 00000000 00:00 0 
+7f78bc021000-7f78c0000000 ---p 00000000 00:00 0 
+7f78c0000000-7f78c0021000 rw-p 00000000 00:00 0 
+7f78c0021000-7f78c4000000 ---p 00000000 00:00 0 
+7f78c4008000-7f78c400a000 r--p 00000000 08:02 15077031                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/lapack_lite.cpython-38-x86_64-linux-gnu.so
+7f78c400a000-7f78c400c000 r-xp 00002000 08:02 15077031                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/lapack_lite.cpython-38-x86_64-linux-gnu.so
+7f78c400c000-7f78c400d000 r--p 00004000 08:02 15077031                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/lapack_lite.cpython-38-x86_64-linux-gnu.so
+7f78c400d000-7f78c400e000 r--p 00004000 08:02 15077031                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/lapack_lite.cpython-38-x86_64-linux-gnu.so
+7f78c400e000-7f78c400f000 rw-p 00005000 08:02 15077031                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/linalg/lapack_lite.cpython-38-x86_64-linux-gnu.so
+7f78c400f000-7f78c4018000 r--p 00000000 08:02 15077046                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_tests.cpython-38-x86_64-linux-gnu.so
+7f78c4018000-7f78c402b000 r-xp 00009000 08:02 15077046                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_tests.cpython-38-x86_64-linux-gnu.so
+7f78c402b000-7f78c4030000 r--p 0001c000 08:02 15077046                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_tests.cpython-38-x86_64-linux-gnu.so
+7f78c4030000-7f78c4031000 ---p 00021000 08:02 15077046                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_tests.cpython-38-x86_64-linux-gnu.so
+7f78c4031000-7f78c4032000 r--p 00021000 08:02 15077046                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_tests.cpython-38-x86_64-linux-gnu.so
+7f78c4032000-7f78c4033000 rw-p 00022000 08:02 15077046                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_tests.cpython-38-x86_64-linux-gnu.so
+7f78c4033000-7f78c4073000 rw-p 00000000 00:00 0 
+7f78c4073000-7f78c409d000 r--p 00000000 08:02 15077128                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_umath.cpython-38-x86_64-linux-gnu.so
+7f78c409d000-7f78c4310000 r-xp 0002a000 08:02 15077128                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_umath.cpython-38-x86_64-linux-gnu.so
+7f78c4310000-7f78c4397000 r--p 0029d000 08:02 15077128                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_umath.cpython-38-x86_64-linux-gnu.so
+7f78c4397000-7f78c439a000 r--p 00323000 08:02 15077128                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_umath.cpython-38-x86_64-linux-gnu.so
+7f78c439a000-7f78c43b6000 rw-p 00326000 08:02 15077128                   /home/piai/anaconda3/lib/python3.8/site-packages/numpy/core/_multiarray_umath.cpython-38-x86_64-linux-gnu.so
+7f78c43b6000-7f78c43d7000 rw-p 00000000 00:00 0 
+7f78c43d7000-7f78c43dd000 r--p 00000000 08:02 14945647                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_py_mkl_service.cpython-38-x86_64-linux-gnu.so
+7f78c43dd000-7f78c43f3000 r-xp 00006000 08:02 14945647                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_py_mkl_service.cpython-38-x86_64-linux-gnu.so
+7f78c43f3000-7f78c43f6000 r--p 0001c000 08:02 14945647                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_py_mkl_service.cpython-38-x86_64-linux-gnu.so
+7f78c43f6000-7f78c43f7000 ---p 0001f000 08:02 14945647                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_py_mkl_service.cpython-38-x86_64-linux-gnu.so
+7f78c43f7000-7f78c43f8000 r--p 0001f000 08:02 14945647                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_py_mkl_service.cpython-38-x86_64-linux-gnu.so
+7f78c43f8000-7f78c43fb000 rw-p 00020000 08:02 14945647                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_py_mkl_service.cpython-38-x86_64-linux-gnu.so
+7f78c43fb000-7f78c467c000 rw-p 00000000 00:00 0 
+7f78c467c000-7f78c487c000 rw-p 00000000 00:00 0 
+7f78c487c000-7f78c4a8c000 rw-p 00000000 00:00 0 
+7f78c4a8c000-7f78c4a8f000 ---p 00000000 00:00 0 
+7f78c4a8f000-7f78c4b8d000 rw-p 00000000 00:00 0 
+7f78c4b8d000-7f78c4ba5000 r-xp 00000000 08:02 9961530                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f78c4ba5000-7f78c4da4000 ---p 00018000 08:02 9961530                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f78c4da4000-7f78c4da5000 r--p 00017000 08:02 9961530                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f78c4da5000-7f78c4da6000 rw-p 00018000 08:02 9961530                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnet.so
+7f78c4da6000-7f78c4db8000 r-xp 00000000 08:02 9961531                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f78c4db8000-7f78c4fb7000 ---p 00012000 08:02 9961531                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f78c4fb7000-7f78c4fb8000 r--p 00011000 08:02 9961531                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f78c4fb8000-7f78c4fb9000 rw-p 00012000 08:02 9961531                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libnio.so
+7f78c4fb9000-7f78c4ff0000 r--s 004ca000 08:02 2099137                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/scala-library-2.12.3.jar
+7f78c4ff0000-7f78c4ff1000 ---p 00000000 00:00 0 
+7f78c4ff1000-7f78c50f1000 rw-p 00000000 00:00 0 
+7f78c50f1000-7f78c50f4000 ---p 00000000 00:00 0 
+7f78c50f4000-7f78c51f2000 rw-p 00000000 00:00 0 
+7f78c51f2000-7f78c51f3000 ---p 00000000 00:00 0 
+7f78c51f3000-7f78c51f6000 ---p 00000000 00:00 0 
+7f78c51f6000-7f78c52f3000 rw-p 00000000 00:00 0 
+7f78c52f3000-7f78c52f4000 ---p 00000000 00:00 0 
+7f78c52f4000-7f78c52f7000 ---p 00000000 00:00 0 
+7f78c52f7000-7f78c53f4000 rw-p 00000000 00:00 0 
+7f78c53f4000-7f78c53f5000 ---p 00000000 00:00 0 
+7f78c53f5000-7f78c53f8000 ---p 00000000 00:00 0 
+7f78c53f8000-7f78c54f5000 rw-p 00000000 00:00 0 
+7f78c54f5000-7f78c54f6000 ---p 00000000 00:00 0 
+7f78c54f6000-7f78c54f9000 ---p 00000000 00:00 0 
+7f78c54f9000-7f78c55f6000 rw-p 00000000 00:00 0 
+7f78c55f6000-7f78c55f9000 ---p 00000000 00:00 0 
+7f78c55f9000-7f78c56f7000 rw-p 00000000 00:00 0 
+7f78c56f7000-7f78c56fa000 ---p 00000000 00:00 0 
+7f78c56fa000-7f78c57f8000 rw-p 00000000 00:00 0 
+7f78c57f8000-7f78c57fb000 ---p 00000000 00:00 0 
+7f78c57fb000-7f78c58f9000 rw-p 00000000 00:00 0 
+7f78c58f9000-7f78c58fa000 ---p 00000000 00:00 0 
+7f78c58fa000-7f78c8000000 rw-p 00000000 00:00 0 
+7f78c8000000-7f78c8021000 rw-p 00000000 00:00 0 
+7f78c8021000-7f78cc000000 ---p 00000000 00:00 0 
+7f78cc006000-7f78cc007000 r--p 00000000 08:02 14945644                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_mklinit.cpython-38-x86_64-linux-gnu.so
+7f78cc007000-7f78cc008000 r-xp 00001000 08:02 14945644                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_mklinit.cpython-38-x86_64-linux-gnu.so
+7f78cc008000-7f78cc009000 r--p 00002000 08:02 14945644                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_mklinit.cpython-38-x86_64-linux-gnu.so
+7f78cc009000-7f78cc00a000 r--p 00002000 08:02 14945644                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_mklinit.cpython-38-x86_64-linux-gnu.so
+7f78cc00a000-7f78cc00b000 rw-p 00003000 08:02 14945644                   /home/piai/anaconda3/lib/python3.8/site-packages/mkl/_mklinit.cpython-38-x86_64-linux-gnu.so
+7f78cc00b000-7f78cc00d000 r--s 00016000 08:02 9961573                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar
+7f78cc00d000-7f78cc020000 r--s 0034b000 08:02 9961584                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar
+7f78cc020000-7f78cc021000 r--p 00000000 00:00 0 
+7f78cc021000-7f78cc023000 r--s 00017000 08:02 13638701                   /home/piai/anaconda3/lib/python3.8/site-packages/org.jpype.jar
+7f78cc023000-7f78cc025000 r--s 0000b000 08:02 2099145                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/twitter-text-1.14.7.jar
+7f78cc025000-7f78cc02a000 r--s 001a4000 08:02 2099144                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/open-korean-text-2.1.0.jar
+7f78cc02a000-7f78cc031000 r--s 0003c000 08:02 2099141                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/snakeyaml-1.12.jar
+7f78cc031000-7f78cc034000 r--s 0001e000 08:02 2099140                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/komoran-3.0.jar
+7f78cc034000-7f78cc036000 r--s 00008000 08:02 2099139                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/shineware-common-1.0.jar
+7f78cc036000-7f78cc038000 r--s 00012000 08:02 2099143                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/aho-corasick.jar
+7f78cc038000-7f78cc03b000 r--s 0075b000 08:02 2099146                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/kkma-2.0.jar
+7f78cc03b000-7f78cc03f000 r--s 00025000 08:02 2099138                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/jhannanum-0.8.4.jar
+7f78cc03f000-7f78cc05a000 r--s 00394000 08:02 9961552                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/cldrdata.jar
+7f78cc05a000-7f78cc060000 r--s 0003d000 08:02 9961559                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunjce_provider.jar
+7f78cc060000-7f78cc07b000 r--s 001d6000 08:02 9961557                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar
+7f78cc07b000-7f78cc085000 r--s 00117000 08:02 9961556                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/localedata.jar
+7f78cc085000-7f78cc08b000 r--s 000d3000 08:02 9961578                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar
+7f78cc08b000-7f78cd5a0000 rw-p 00000000 00:00 0 
+7f78cd5a0000-7f78cd771000 r--s 03c94000 08:02 9961585                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar
+7f78cd771000-7f78cdf71000 rw-p 00000000 00:00 0 
+7f78cdf71000-7f78ce171000 rw-p 00000000 00:00 0 
+7f78ce171000-7f78ce172000 ---p 00000000 00:00 0 
+7f78ce172000-7f78ce272000 rw-p 00000000 00:00 0 
+7f78ce272000-7f78ce273000 ---p 00000000 00:00 0 
+7f78ce273000-7f78ce373000 rw-p 00000000 00:00 0 
+7f78ce373000-7f78ce374000 ---p 00000000 00:00 0 
+7f78ce374000-7f78ce474000 rw-p 00000000 00:00 0 
+7f78ce474000-7f78ce475000 ---p 00000000 00:00 0 
+7f78ce475000-7f78ce575000 rw-p 00000000 00:00 0 
+7f78ce575000-7f78ce576000 ---p 00000000 00:00 0 
+7f78ce576000-7f78ce676000 rw-p 00000000 00:00 0 
+7f78ce676000-7f78ce677000 ---p 00000000 00:00 0 
+7f78ce677000-7f78ce777000 rw-p 00000000 00:00 0 
+7f78ce777000-7f78ce778000 ---p 00000000 00:00 0 
+7f78ce778000-7f78ce878000 rw-p 00000000 00:00 0 
+7f78ce878000-7f78ce879000 ---p 00000000 00:00 0 
+7f78ce879000-7f78ceac7000 rw-p 00000000 00:00 0 
+7f78ceac7000-7f78ceacf000 ---p 00000000 00:00 0 
+7f78ceacf000-7f78cec1d000 rw-p 00000000 00:00 0 
+7f78cec1d000-7f78cec24000 ---p 00000000 00:00 0 
+7f78cec24000-7f78ceccf000 rw-p 00000000 00:00 0 
+7f78ceccf000-7f78cecf8000 rw-p 00000000 00:00 0 
+7f78cecf8000-7f78cf090000 ---p 00000000 00:00 0 
+7f78cf090000-7f78cfa80000 rwxp 00000000 00:00 0 
+7f78cfa80000-7f78de090000 ---p 00000000 00:00 0 
+7f78de090000-7f78de098000 r-xp 00000000 08:02 9961538                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f78de098000-7f78de297000 ---p 00008000 08:02 9961538                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f78de297000-7f78de298000 r--p 00007000 08:02 9961538                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f78de298000-7f78de299000 rw-p 00008000 08:02 9961538                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libzip.so
+7f78de299000-7f78de2a4000 r-xp 00000000 08:02 9704677                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f78de2a4000-7f78de4a3000 ---p 0000b000 08:02 9704677                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f78de4a3000-7f78de4a4000 r--p 0000a000 08:02 9704677                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f78de4a4000-7f78de4a5000 rw-p 0000b000 08:02 9704677                    /lib/x86_64-linux-gnu/libnss_files-2.27.so
+7f78de4a5000-7f78de4ab000 rw-p 00000000 00:00 0 
+7f78de4ab000-7f78de4c2000 r-xp 00000000 08:02 9704671                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f78de4c2000-7f78de6c1000 ---p 00017000 08:02 9704671                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f78de6c1000-7f78de6c2000 r--p 00016000 08:02 9704671                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f78de6c2000-7f78de6c3000 rw-p 00017000 08:02 9704671                    /lib/x86_64-linux-gnu/libnsl-2.27.so
+7f78de6c3000-7f78de6c5000 rw-p 00000000 00:00 0 
+7f78de6c5000-7f78de6d0000 r-xp 00000000 08:02 9704688                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f78de6d0000-7f78de8cf000 ---p 0000b000 08:02 9704688                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f78de8cf000-7f78de8d0000 r--p 0000a000 08:02 9704688                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f78de8d0000-7f78de8d1000 rw-p 0000b000 08:02 9704688                    /lib/x86_64-linux-gnu/libnss_nis-2.27.so
+7f78de8d1000-7f78de8d9000 r-xp 00000000 08:02 9704673                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f78de8d9000-7f78dead9000 ---p 00008000 08:02 9704673                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f78dead9000-7f78deada000 r--p 00008000 08:02 9704673                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f78deada000-7f78deadb000 rw-p 00009000 08:02 9704673                    /lib/x86_64-linux-gnu/libnss_compat-2.27.so
+7f78deadb000-7f78deadc000 r--s 00003000 08:02 2099142                    /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/shineware-ds-1.0.jar
+7f78deadc000-7f78deadf000 r--s 0000f000 08:02 9961554                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/icedtea-sound.jar
+7f78deadf000-7f78deaf3000 rw-p 00000000 00:00 0 
+7f78deaf3000-7f78deb1d000 r-xp 00000000 08:02 9961519                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f78deb1d000-7f78ded1d000 ---p 0002a000 08:02 9961519                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f78ded1d000-7f78ded1e000 r--p 0002a000 08:02 9961519                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f78ded1e000-7f78ded20000 rw-p 0002b000 08:02 9961519                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libjava.so
+7f78ded20000-7f78ded30000 r-xp 00000000 08:02 9961537                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f78ded30000-7f78def2f000 ---p 00010000 08:02 9961537                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f78def2f000-7f78def31000 r--p 0000f000 08:02 9961537                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f78def31000-7f78def32000 rw-p 00011000 08:02 9961537                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/libverify.so
+7f78def32000-7f78dfca0000 r-xp 00000000 08:02 9961541                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f78dfca0000-7f78dfe9f000 ---p 00d6e000 08:02 9961541                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f78dfe9f000-7f78dff35000 r--p 00d6d000 08:02 9961541                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f78dff35000-7f78dff5e000 rw-p 00e03000 08:02 9961541                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/libjvm.so
+7f78dff5e000-7f78dffd1000 rw-p 00000000 00:00 0 
+7f78dffd1000-7f78dffd7000 r--p 00000000 08:02 527408                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/_elementpath.cpython-38-x86_64-linux-gnu.so
+7f78dffd7000-7f78dfff4000 r-xp 00006000 08:02 527408                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/_elementpath.cpython-38-x86_64-linux-gnu.so
+7f78dfff4000-7f78dfff9000 r--p 00023000 08:02 527408                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/_elementpath.cpython-38-x86_64-linux-gnu.so
+7f78dfff9000-7f78dfffa000 ---p 00028000 08:02 527408                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/_elementpath.cpython-38-x86_64-linux-gnu.so
+7f78dfffa000-7f78dfffb000 r--p 00028000 08:02 527408                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/_elementpath.cpython-38-x86_64-linux-gnu.so
+7f78dfffb000-7f78dffff000 rw-p 00029000 08:02 527408                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/_elementpath.cpython-38-x86_64-linux-gnu.so
+7f78dffff000-7f78e0000000 rw-p 00000000 00:00 0 
+7f78e0000000-7f78e002c000 rw-p 00000000 00:00 0 
+7f78e002c000-7f78e4000000 ---p 00000000 00:00 0 
+7f78e4000000-7f78e4021000 rw-p 00000000 00:00 0 
+7f78e4021000-7f78e8000000 ---p 00000000 00:00 0 
+7f78e8000000-7f78e8021000 rw-p 00000000 00:00 0 
+7f78e8021000-7f78ec000000 ---p 00000000 00:00 0 
+7f78ec000000-7f78ec001000 r--s 0000a000 08:02 9961555                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/jaccess.jar
+7f78ec001000-7f78ec003000 r--s 00007000 08:02 10491081                   /usr/share/java/java-atk-wrapper.jar
+7f78ec003000-7f78ec005000 r--s 00001000 08:02 9961553                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/dnsns.jar
+7f78ec005000-7f78ec045000 rw-p 00000000 00:00 0 
+7f78ec045000-7f78ed946000 r--p 00000000 08:02 14684074                   /home/piai/anaconda3/lib/libicudata.so.58.2
+7f78ed946000-7f78ed947000 r--p 01900000 08:02 14684074                   /home/piai/anaconda3/lib/libicudata.so.58.2
+7f78ed947000-7f78ed9a5000 r--p 00000000 08:02 14683597                   /home/piai/anaconda3/lib/libicuuc.so.58.2
+7f78ed9a5000-7f78eda71000 r-xp 0005e000 08:02 14683597                   /home/piai/anaconda3/lib/libicuuc.so.58.2
+7f78eda71000-7f78edae6000 r--p 0012a000 08:02 14683597                   /home/piai/anaconda3/lib/libicuuc.so.58.2
+7f78edae6000-7f78edaf8000 r--p 0019e000 08:02 14683597                   /home/piai/anaconda3/lib/libicuuc.so.58.2
+7f78edaf8000-7f78edaf9000 rw-p 001b0000 08:02 14683597                   /home/piai/anaconda3/lib/libicuuc.so.58.2
+7f78edaf9000-7f78edafa000 rw-p 00000000 00:00 0 
+7f78edafa000-7f78edbbb000 r--p 00000000 08:02 14683731                   /home/piai/anaconda3/lib/libicui18n.so.58.2
+7f78edbbb000-7f78edcfa000 r-xp 000c1000 08:02 14683731                   /home/piai/anaconda3/lib/libicui18n.so.58.2
+7f78edcfa000-7f78edd69000 r--p 00200000 08:02 14683731                   /home/piai/anaconda3/lib/libicui18n.so.58.2
+7f78edd69000-7f78edd6a000 ---p 0026f000 08:02 14683731                   /home/piai/anaconda3/lib/libicui18n.so.58.2
+7f78edd6a000-7f78edd78000 r--p 0026f000 08:02 14683731                   /home/piai/anaconda3/lib/libicui18n.so.58.2
+7f78edd78000-7f78edd79000 rw-p 0027d000 08:02 14683731                   /home/piai/anaconda3/lib/libicui18n.so.58.2
+7f78edd79000-7f78eddaa000 r--p 00000000 08:02 15205936                   /home/piai/anaconda3/lib/libxml2.so.2.9.10
+7f78eddaa000-7f78ede8c000 r-xp 00031000 08:02 15205936                   /home/piai/anaconda3/lib/libxml2.so.2.9.10
+7f78ede8c000-7f78eded5000 r--p 00113000 08:02 15205936                   /home/piai/anaconda3/lib/libxml2.so.2.9.10
+7f78eded5000-7f78edede000 r--p 0015b000 08:02 15205936                   /home/piai/anaconda3/lib/libxml2.so.2.9.10
+7f78edede000-7f78ededf000 rw-p 00164000 08:02 15205936                   /home/piai/anaconda3/lib/libxml2.so.2.9.10
+7f78ededf000-7f78edee1000 rw-p 00000000 00:00 0 
+7f78edee1000-7f78edee5000 r--p 00000000 08:02 14421702                   /home/piai/anaconda3/lib/libexslt.so.0.8.20
+7f78edee5000-7f78edef1000 r-xp 00004000 08:02 14421702                   /home/piai/anaconda3/lib/libexslt.so.0.8.20
+7f78edef1000-7f78edef5000 r--p 00010000 08:02 14421702                   /home/piai/anaconda3/lib/libexslt.so.0.8.20
+7f78edef5000-7f78edef6000 r--p 00013000 08:02 14421702                   /home/piai/anaconda3/lib/libexslt.so.0.8.20
+7f78edef6000-7f78edef7000 rw-p 00014000 08:02 14421702                   /home/piai/anaconda3/lib/libexslt.so.0.8.20
+7f78edef7000-7f78edf02000 r--p 00000000 08:02 12980476                   /home/piai/anaconda3/lib/libxslt.so.1.1.34
+7f78edf02000-7f78edf28000 r-xp 0000b000 08:02 12980476                   /home/piai/anaconda3/lib/libxslt.so.1.1.34
+7f78edf28000-7f78edf36000 r--p 00031000 08:02 12980476                   /home/piai/anaconda3/lib/libxslt.so.1.1.34
+7f78edf36000-7f78edf38000 r--p 0003e000 08:02 12980476                   /home/piai/anaconda3/lib/libxslt.so.1.1.34
+7f78edf38000-7f78edf39000 rw-p 00040000 08:02 12980476                   /home/piai/anaconda3/lib/libxslt.so.1.1.34
+7f78edf39000-7f78edf6b000 r--p 00000000 08:02 527594                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/etree.cpython-38-x86_64-linux-gnu.so
+7f78edf6b000-7f78ee0b8000 r-xp 00032000 08:02 527594                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/etree.cpython-38-x86_64-linux-gnu.so
+7f78ee0b8000-7f78ee0f7000 r--p 0017f000 08:02 527594                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/etree.cpython-38-x86_64-linux-gnu.so
+7f78ee0f7000-7f78ee0f8000 ---p 001be000 08:02 527594                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/etree.cpython-38-x86_64-linux-gnu.so
+7f78ee0f8000-7f78ee0fa000 r--p 001be000 08:02 527594                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/etree.cpython-38-x86_64-linux-gnu.so
+7f78ee0fa000-7f78ee131000 rw-p 001c0000 08:02 527594                     /home/piai/anaconda3/lib/python3.8/site-packages/lxml/etree.cpython-38-x86_64-linux-gnu.so
+7f78ee131000-7f78ee1b9000 rw-p 00000000 00:00 0 
+7f78ee1b9000-7f78ee1c0000 r--p 00000000 08:02 14683873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/pyexpat.cpython-38-x86_64-linux-gnu.so
+7f78ee1c0000-7f78ee1ed000 r-xp 00007000 08:02 14683873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/pyexpat.cpython-38-x86_64-linux-gnu.so
+7f78ee1ed000-7f78ee1f8000 r--p 00034000 08:02 14683873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/pyexpat.cpython-38-x86_64-linux-gnu.so
+7f78ee1f8000-7f78ee1fb000 r--p 0003e000 08:02 14683873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/pyexpat.cpython-38-x86_64-linux-gnu.so
+7f78ee1fb000-7f78ee1fd000 rw-p 00041000 08:02 14683873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/pyexpat.cpython-38-x86_64-linux-gnu.so
+7f78ee1fd000-7f78ee201000 r--p 00000000 08:02 14683426                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_elementtree.cpython-38-x86_64-linux-gnu.so
+7f78ee201000-7f78ee20c000 r-xp 00004000 08:02 14683426                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_elementtree.cpython-38-x86_64-linux-gnu.so
+7f78ee20c000-7f78ee210000 r--p 0000f000 08:02 14683426                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_elementtree.cpython-38-x86_64-linux-gnu.so
+7f78ee210000-7f78ee211000 r--p 00012000 08:02 14683426                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_elementtree.cpython-38-x86_64-linux-gnu.so
+7f78ee211000-7f78ee213000 rw-p 00013000 08:02 14683426                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_elementtree.cpython-38-x86_64-linux-gnu.so
+7f78ee213000-7f78ee553000 rw-p 00000000 00:00 0 
+7f78ee553000-7f78ee5f6000 r-xp 00000000 08:02 13638015                   /home/piai/anaconda3/lib/python3.8/site-packages/_jpype.cpython-38-x86_64-linux-gnu.so
+7f78ee5f6000-7f78ee7f5000 ---p 000a3000 08:02 13638015                   /home/piai/anaconda3/lib/python3.8/site-packages/_jpype.cpython-38-x86_64-linux-gnu.so
+7f78ee7f5000-7f78ee7f9000 r--p 000a2000 08:02 13638015                   /home/piai/anaconda3/lib/python3.8/site-packages/_jpype.cpython-38-x86_64-linux-gnu.so
+7f78ee7f9000-7f78ee7fd000 rw-p 000a6000 08:02 13638015                   /home/piai/anaconda3/lib/python3.8/site-packages/_jpype.cpython-38-x86_64-linux-gnu.so
+7f78ee7fd000-7f78ee7fe000 ---p 00000000 00:00 0 
+7f78ee7fe000-7f78eeffe000 rw-p 00000000 00:00 0 
+7f78eeffe000-7f78eefff000 ---p 00000000 00:00 0 
+7f78eefff000-7f78ef7ff000 rw-p 00000000 00:00 0 
+7f78ef7ff000-7f78ef800000 ---p 00000000 00:00 0 
+7f78ef800000-7f78f0000000 rw-p 00000000 00:00 0 
+7f78f0000000-7f78f0032000 rw-p 00000000 00:00 0 
+7f78f0032000-7f78f4000000 ---p 00000000 00:00 0 
+7f78f4000000-7f78f4021000 rw-p 00000000 00:00 0 
+7f78f4021000-7f78f8000000 ---p 00000000 00:00 0 
+7f78f8000000-7f78f8062000 rw-p 00000000 00:00 0 
+7f78f8062000-7f78fc000000 ---p 00000000 00:00 0 
+7f78fc000000-7f78fc002000 r--s 00010000 08:02 9961561                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/zipfs.jar
+7f78fc002000-7f78fc00a000 rw-s 00000000 08:02 4456850                    /tmp/hsperfdata_piai/16825
+7f78fc00a000-7f78fc0ca000 rw-p 00000000 00:00 0 
+7f78fc0ca000-7f78fc0d2000 r--p 00000000 08:02 14815180                   /home/piai/anaconda3/lib/python3.8/site-packages/_cffi_backend.cpython-38-x86_64-linux-gnu.so
+7f78fc0d2000-7f78fc0e8000 r-xp 00008000 08:02 14815180                   /home/piai/anaconda3/lib/python3.8/site-packages/_cffi_backend.cpython-38-x86_64-linux-gnu.so
+7f78fc0e8000-7f78fc0f3000 r--p 0001e000 08:02 14815180                   /home/piai/anaconda3/lib/python3.8/site-packages/_cffi_backend.cpython-38-x86_64-linux-gnu.so
+7f78fc0f3000-7f78fc0f5000 r--p 00028000 08:02 14815180                   /home/piai/anaconda3/lib/python3.8/site-packages/_cffi_backend.cpython-38-x86_64-linux-gnu.so
+7f78fc0f5000-7f78fc0f8000 rw-p 0002a000 08:02 14815180                   /home/piai/anaconda3/lib/python3.8/site-packages/_cffi_backend.cpython-38-x86_64-linux-gnu.so
+7f78fc0f8000-7f78fc0fb000 rw-p 00000000 00:00 0 
+7f78fc0fb000-7f78fc0fe000 r--p 00000000 08:02 15470829                   /home/piai/anaconda3/lib/python3.8/site-packages/brotli/_brotli.abi3.so
+7f78fc0fe000-7f78fc141000 r-xp 00003000 08:02 15470829                   /home/piai/anaconda3/lib/python3.8/site-packages/brotli/_brotli.abi3.so
+7f78fc141000-7f78fc1af000 r--p 00046000 08:02 15470829                   /home/piai/anaconda3/lib/python3.8/site-packages/brotli/_brotli.abi3.so
+7f78fc1af000-7f78fc1b0000 r--p 000b3000 08:02 15470829                   /home/piai/anaconda3/lib/python3.8/site-packages/brotli/_brotli.abi3.so
+7f78fc1b0000-7f78fc1b1000 rw-p 000b4000 08:02 15470829                   /home/piai/anaconda3/lib/python3.8/site-packages/brotli/_brotli.abi3.so
+7f78fc1b1000-7f78fc331000 rw-p 00000000 00:00 0 
+7f78fc331000-7f78fc332000 ---p 00000000 00:00 0 
+7f78fc332000-7f78fcb32000 rw-p 00000000 00:00 0 
+7f78fcb32000-7f78fcb33000 ---p 00000000 00:00 0 
+7f78fcb33000-7f78fd333000 rw-p 00000000 00:00 0 
+7f78fd333000-7f78fd334000 ---p 00000000 00:00 0 
+7f78fd334000-7f78fdb34000 rw-p 00000000 00:00 0 
+7f78fdb34000-7f78fdb35000 ---p 00000000 00:00 0 
+7f78fdb35000-7f78fe335000 rw-p 00000000 00:00 0 
+7f78fe335000-7f78fe336000 ---p 00000000 00:00 0 
+7f78fe336000-7f78fec36000 rw-p 00000000 00:00 0 
+7f78fec36000-7f78fec3d000 r--p 00000000 08:02 14684080                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_decimal.cpython-38-x86_64-linux-gnu.so
+7f78fec3d000-7f78fec72000 r-xp 00007000 08:02 14684080                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_decimal.cpython-38-x86_64-linux-gnu.so
+7f78fec72000-7f78fec82000 r--p 0003c000 08:02 14684080                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_decimal.cpython-38-x86_64-linux-gnu.so
+7f78fec82000-7f78fec83000 r--p 0004b000 08:02 14684080                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_decimal.cpython-38-x86_64-linux-gnu.so
+7f78fec83000-7f78fec86000 rw-p 0004c000 08:02 14684080                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_decimal.cpython-38-x86_64-linux-gnu.so
+7f78fec86000-7f78fed06000 rw-p 00000000 00:00 0 
+7f78fed06000-7f78fed16000 r--p 00000000 08:02 12979923                   /home/piai/anaconda3/lib/libtinfow.so.6.2
+7f78fed16000-7f78fed2f000 r-xp 00010000 08:02 12979923                   /home/piai/anaconda3/lib/libtinfow.so.6.2
+7f78fed2f000-7f78fed40000 r--p 00029000 08:02 12979923                   /home/piai/anaconda3/lib/libtinfow.so.6.2
+7f78fed40000-7f78fed44000 r--p 00039000 08:02 12979923                   /home/piai/anaconda3/lib/libtinfow.so.6.2
+7f78fed44000-7f78fed45000 rw-p 0003d000 08:02 12979923                   /home/piai/anaconda3/lib/libtinfow.so.6.2
+7f78fed45000-7f78fed51000 r--p 00000000 08:02 15468380                   /home/piai/anaconda3/lib/libncursesw.so.6.2
+7f78fed51000-7f78fed77000 r-xp 0000c000 08:02 15468380                   /home/piai/anaconda3/lib/libncursesw.so.6.2
+7f78fed77000-7f78fed80000 r--p 00032000 08:02 15468380                   /home/piai/anaconda3/lib/libncursesw.so.6.2
+7f78fed80000-7f78fed81000 r--p 0003a000 08:02 15468380                   /home/piai/anaconda3/lib/libncursesw.so.6.2
+7f78fed81000-7f78fed82000 rw-p 0003b000 08:02 15468380                   /home/piai/anaconda3/lib/libncursesw.so.6.2
+7f78fed82000-7f78fed89000 r--p 00000000 08:02 14683638                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_curses.cpython-38-x86_64-linux-gnu.so
+7f78fed89000-7f78fed98000 r-xp 00007000 08:02 14683638                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_curses.cpython-38-x86_64-linux-gnu.so
+7f78fed98000-7f78feda2000 r--p 00016000 08:02 14683638                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_curses.cpython-38-x86_64-linux-gnu.so
+7f78feda2000-7f78feda3000 ---p 00020000 08:02 14683638                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_curses.cpython-38-x86_64-linux-gnu.so
+7f78feda3000-7f78feda4000 r--p 00020000 08:02 14683638                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_curses.cpython-38-x86_64-linux-gnu.so
+7f78feda4000-7f78feda6000 rw-p 00021000 08:02 14683638                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_curses.cpython-38-x86_64-linux-gnu.so
+7f78feda6000-7f78feea6000 rw-p 00000000 00:00 0 
+7f78feea6000-7f78feea9000 r--p 00000000 08:02 15073996                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_proxy_steerable.cpython-38-x86_64-linux-gnu.so
+7f78feea9000-7f78feeaf000 r-xp 00003000 08:02 15073996                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_proxy_steerable.cpython-38-x86_64-linux-gnu.so
+7f78feeaf000-7f78feeb1000 r--p 00009000 08:02 15073996                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_proxy_steerable.cpython-38-x86_64-linux-gnu.so
+7f78feeb1000-7f78feeb2000 r--p 0000a000 08:02 15073996                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_proxy_steerable.cpython-38-x86_64-linux-gnu.so
+7f78feeb2000-7f78feeb3000 rw-p 0000b000 08:02 15073996                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_proxy_steerable.cpython-38-x86_64-linux-gnu.so
+7f78feeb3000-7f78feeb6000 r--p 00000000 08:02 15073998                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_device.cpython-38-x86_64-linux-gnu.so
+7f78feeb6000-7f78feebd000 r-xp 00003000 08:02 15073998                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_device.cpython-38-x86_64-linux-gnu.so
+7f78feebd000-7f78feebf000 r--p 0000a000 08:02 15073998                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_device.cpython-38-x86_64-linux-gnu.so
+7f78feebf000-7f78feec0000 r--p 0000b000 08:02 15073998                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_device.cpython-38-x86_64-linux-gnu.so
+7f78feec0000-7f78feec1000 rw-p 0000c000 08:02 15073998                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_device.cpython-38-x86_64-linux-gnu.so
+7f78feec1000-7f78feec4000 r--p 00000000 08:02 15073994                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_version.cpython-38-x86_64-linux-gnu.so
+7f78feec4000-7f78feec7000 r-xp 00003000 08:02 15073994                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_version.cpython-38-x86_64-linux-gnu.so
+7f78feec7000-7f78feec8000 r--p 00006000 08:02 15073994                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_version.cpython-38-x86_64-linux-gnu.so
+7f78feec8000-7f78feec9000 ---p 00007000 08:02 15073994                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_version.cpython-38-x86_64-linux-gnu.so
+7f78feec9000-7f78feeca000 r--p 00007000 08:02 15073994                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_version.cpython-38-x86_64-linux-gnu.so
+7f78feeca000-7f78feecb000 rw-p 00008000 08:02 15073994                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_version.cpython-38-x86_64-linux-gnu.so
+7f78feecb000-7f78feecf000 r--p 00000000 08:02 15074001                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_poll.cpython-38-x86_64-linux-gnu.so
+7f78feecf000-7f78feeda000 r-xp 00004000 08:02 15074001                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_poll.cpython-38-x86_64-linux-gnu.so
+7f78feeda000-7f78feedc000 r--p 0000f000 08:02 15074001                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_poll.cpython-38-x86_64-linux-gnu.so
+7f78feedc000-7f78feedd000 ---p 00011000 08:02 15074001                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_poll.cpython-38-x86_64-linux-gnu.so
+7f78feedd000-7f78feede000 r--p 00011000 08:02 15074001                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_poll.cpython-38-x86_64-linux-gnu.so
+7f78feede000-7f78feee0000 rw-p 00012000 08:02 15074001                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/_poll.cpython-38-x86_64-linux-gnu.so
+7f78feee0000-7f78feee3000 r--p 00000000 08:02 15073997                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/utils.cpython-38-x86_64-linux-gnu.so
+7f78feee3000-7f78feee9000 r-xp 00003000 08:02 15073997                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/utils.cpython-38-x86_64-linux-gnu.so
+7f78feee9000-7f78feeeb000 r--p 00009000 08:02 15073997                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/utils.cpython-38-x86_64-linux-gnu.so
+7f78feeeb000-7f78feeec000 r--p 0000a000 08:02 15073997                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/utils.cpython-38-x86_64-linux-gnu.so
+7f78feeec000-7f78feeed000 rw-p 0000b000 08:02 15073997                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/utils.cpython-38-x86_64-linux-gnu.so
+7f78feeed000-7f78feeee000 rw-p 00000000 00:00 0 
+7f78feeee000-7f78feef4000 r--p 00000000 08:02 15074004                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/socket.cpython-38-x86_64-linux-gnu.so
+7f78feef4000-7f78fef0c000 r-xp 00006000 08:02 15074004                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/socket.cpython-38-x86_64-linux-gnu.so
+7f78fef0c000-7f78fef10000 r--p 0001e000 08:02 15074004                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/socket.cpython-38-x86_64-linux-gnu.so
+7f78fef10000-7f78fef11000 ---p 00022000 08:02 15074004                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/socket.cpython-38-x86_64-linux-gnu.so
+7f78fef11000-7f78fef12000 r--p 00022000 08:02 15074004                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/socket.cpython-38-x86_64-linux-gnu.so
+7f78fef12000-7f78fef16000 rw-p 00023000 08:02 15074004                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/socket.cpython-38-x86_64-linux-gnu.so
+7f78fef16000-7f78fef17000 rw-p 00000000 00:00 0 
+7f78fef17000-7f78fef1b000 r--p 00000000 08:02 15074000                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/context.cpython-38-x86_64-linux-gnu.so
+7f78fef1b000-7f78fef25000 r-xp 00004000 08:02 15074000                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/context.cpython-38-x86_64-linux-gnu.so
+7f78fef25000-7f78fef28000 r--p 0000e000 08:02 15074000                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/context.cpython-38-x86_64-linux-gnu.so
+7f78fef28000-7f78fef29000 r--p 00010000 08:02 15074000                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/context.cpython-38-x86_64-linux-gnu.so
+7f78fef29000-7f78fef2b000 rw-p 00011000 08:02 15074000                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/context.cpython-38-x86_64-linux-gnu.so
+7f78fef2b000-7f78fef31000 r--p 00000000 08:02 15074003                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/message.cpython-38-x86_64-linux-gnu.so
+7f78fef31000-7f78fef3f000 r-xp 00006000 08:02 15074003                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/message.cpython-38-x86_64-linux-gnu.so
+7f78fef3f000-7f78fef42000 r--p 00014000 08:02 15074003                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/message.cpython-38-x86_64-linux-gnu.so
+7f78fef42000-7f78fef43000 ---p 00017000 08:02 15074003                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/message.cpython-38-x86_64-linux-gnu.so
+7f78fef43000-7f78fef44000 r--p 00017000 08:02 15074003                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/message.cpython-38-x86_64-linux-gnu.so
+7f78fef44000-7f78fef47000 rw-p 00018000 08:02 15074003                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/message.cpython-38-x86_64-linux-gnu.so
+7f78fef47000-7f78fef4a000 r--p 00000000 08:02 15074463                   /home/piai/anaconda3/lib/libgcc_s.so.1
+7f78fef4a000-7f78fef56000 r-xp 00003000 08:02 15074463                   /home/piai/anaconda3/lib/libgcc_s.so.1
+7f78fef56000-7f78fef59000 r--p 0000f000 08:02 15074463                   /home/piai/anaconda3/lib/libgcc_s.so.1
+7f78fef59000-7f78fef5a000 r--p 00011000 08:02 15074463                   /home/piai/anaconda3/lib/libgcc_s.so.1
+7f78fef5a000-7f78fef5b000 rw-p 00012000 08:02 15074463                   /home/piai/anaconda3/lib/libgcc_s.so.1
+7f78fef5b000-7f78feffd000 r--p 00000000 08:02 14684040                   /home/piai/anaconda3/lib/libstdc++.so.6.0.26
+7f78feffd000-7f78ff07c000 r-xp 000a2000 08:02 14684040                   /home/piai/anaconda3/lib/libstdc++.so.6.0.26
+7f78ff07c000-7f78ff0bd000 r--p 00121000 08:02 14684040                   /home/piai/anaconda3/lib/libstdc++.so.6.0.26
+7f78ff0bd000-7f78ff0c8000 r--p 00161000 08:02 14684040                   /home/piai/anaconda3/lib/libstdc++.so.6.0.26
+7f78ff0c8000-7f78ff0cc000 rw-p 0016c000 08:02 14684040                   /home/piai/anaconda3/lib/libstdc++.so.6.0.26
+7f78ff0cc000-7f78ff0cf000 rw-p 00000000 00:00 0 
+7f78ff0cf000-7f78ff0dd000 r--p 00000000 08:02 14811633                   /home/piai/anaconda3/lib/libsodium.so.23.3.0
+7f78ff0dd000-7f78ff116000 r-xp 0000e000 08:02 14811633                   /home/piai/anaconda3/lib/libsodium.so.23.3.0
+7f78ff116000-7f78ff128000 r--p 00047000 08:02 14811633                   /home/piai/anaconda3/lib/libsodium.so.23.3.0
+7f78ff128000-7f78ff129000 r--p 00058000 08:02 14811633                   /home/piai/anaconda3/lib/libsodium.so.23.3.0
+7f78ff129000-7f78ff12a000 rw-p 00059000 08:02 14811633                   /home/piai/anaconda3/lib/libsodium.so.23.3.0
+7f78ff12a000-7f78ff13e000 r--p 00000000 08:02 15077783                   /home/piai/anaconda3/lib/libzmq.so.5.2.2
+7f78ff13e000-7f78ff19a000 r-xp 00014000 08:02 15077783                   /home/piai/anaconda3/lib/libzmq.so.5.2.2
+7f78ff19a000-7f78ff1b2000 r--p 00070000 08:02 15077783                   /home/piai/anaconda3/lib/libzmq.so.5.2.2
+7f78ff1b2000-7f78ff1b3000 ---p 00088000 08:02 15077783                   /home/piai/anaconda3/lib/libzmq.so.5.2.2
+7f78ff1b3000-7f78ff1ba000 r--p 00088000 08:02 15077783                   /home/piai/anaconda3/lib/libzmq.so.5.2.2
+7f78ff1ba000-7f78ff1bb000 rw-p 0008f000 08:02 15077783                   /home/piai/anaconda3/lib/libzmq.so.5.2.2
+7f78ff1bb000-7f78ff1be000 r--p 00000000 08:02 15073995                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/error.cpython-38-x86_64-linux-gnu.so
+7f78ff1be000-7f78ff1c1000 r-xp 00003000 08:02 15073995                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/error.cpython-38-x86_64-linux-gnu.so
+7f78ff1c1000-7f78ff1c3000 r--p 00006000 08:02 15073995                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/error.cpython-38-x86_64-linux-gnu.so
+7f78ff1c3000-7f78ff1c4000 r--p 00007000 08:02 15073995                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/error.cpython-38-x86_64-linux-gnu.so
+7f78ff1c4000-7f78ff1c5000 rw-p 00008000 08:02 15073995                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/error.cpython-38-x86_64-linux-gnu.so
+7f78ff1c5000-7f78ff1ca000 r--p 00000000 08:02 15074002                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/constants.cpython-38-x86_64-linux-gnu.so
+7f78ff1ca000-7f78ff1d4000 r-xp 00005000 08:02 15074002                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/constants.cpython-38-x86_64-linux-gnu.so
+7f78ff1d4000-7f78ff1d6000 r--p 0000f000 08:02 15074002                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/constants.cpython-38-x86_64-linux-gnu.so
+7f78ff1d6000-7f78ff1d7000 r--p 00010000 08:02 15074002                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/constants.cpython-38-x86_64-linux-gnu.so
+7f78ff1d7000-7f78ff1da000 rw-p 00011000 08:02 15074002                   /home/piai/anaconda3/lib/python3.8/site-packages/zmq/backend/cython/constants.cpython-38-x86_64-linux-gnu.so
+7f78ff1da000-7f78ff25a000 rw-p 00000000 00:00 0 
+7f78ff25a000-7f78ff25c000 r--p 00000000 08:02 14682861                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lsprof.cpython-38-x86_64-linux-gnu.so
+7f78ff25c000-7f78ff25e000 r-xp 00002000 08:02 14682861                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lsprof.cpython-38-x86_64-linux-gnu.so
+7f78ff25e000-7f78ff25f000 r--p 00004000 08:02 14682861                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lsprof.cpython-38-x86_64-linux-gnu.so
+7f78ff25f000-7f78ff260000 ---p 00005000 08:02 14682861                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lsprof.cpython-38-x86_64-linux-gnu.so
+7f78ff260000-7f78ff261000 r--p 00005000 08:02 14682861                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lsprof.cpython-38-x86_64-linux-gnu.so
+7f78ff261000-7f78ff262000 rw-p 00006000 08:02 14682861                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lsprof.cpython-38-x86_64-linux-gnu.so
+7f78ff262000-7f78ff5a2000 rw-p 00000000 00:00 0 
+7f78ff5a2000-7f78ff5aa000 r--p 00000000 08:02 14683686                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ctypes.cpython-38-x86_64-linux-gnu.so
+7f78ff5aa000-7f78ff5b9000 r-xp 00008000 08:02 14683686                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ctypes.cpython-38-x86_64-linux-gnu.so
+7f78ff5b9000-7f78ff5bf000 r--p 00017000 08:02 14683686                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ctypes.cpython-38-x86_64-linux-gnu.so
+7f78ff5bf000-7f78ff5c0000 r--p 0001c000 08:02 14683686                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ctypes.cpython-38-x86_64-linux-gnu.so
+7f78ff5c0000-7f78ff5c4000 rw-p 0001d000 08:02 14683686                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ctypes.cpython-38-x86_64-linux-gnu.so
+7f78ff5c4000-7f78ff644000 rw-p 00000000 00:00 0 
+7f78ff646000-7f78ff647000 r--p 00000000 08:02 789637                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce.cpython-38-x86_64-linux-gnu.so
+7f78ff647000-7f78ff649000 r-xp 00001000 08:02 789637                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce.cpython-38-x86_64-linux-gnu.so
+7f78ff649000-7f78ff64a000 r--p 00003000 08:02 789637                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce.cpython-38-x86_64-linux-gnu.so
+7f78ff64a000-7f78ff64b000 r--p 00003000 08:02 789637                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce.cpython-38-x86_64-linux-gnu.so
+7f78ff64b000-7f78ff64c000 rw-p 00004000 08:02 789637                     /home/piai/anaconda3/lib/python3.8/site-packages/bottleneck/nonreduce.cpython-38-x86_64-linux-gnu.so
+7f78ff64c000-7f78ff6cc000 rw-p 00000000 00:00 0 
+7f78ff6cc000-7f78ff6d5000 r--p 00000000 08:02 15074140                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_path.cpython-38-x86_64-linux-gnu.so
+7f78ff6d5000-7f78ff6f2000 r-xp 00009000 08:02 15074140                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_path.cpython-38-x86_64-linux-gnu.so
+7f78ff6f2000-7f78ff6f7000 r--p 00026000 08:02 15074140                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_path.cpython-38-x86_64-linux-gnu.so
+7f78ff6f7000-7f78ff6f8000 ---p 0002b000 08:02 15074140                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_path.cpython-38-x86_64-linux-gnu.so
+7f78ff6f8000-7f78ff6f9000 r--p 0002b000 08:02 15074140                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_path.cpython-38-x86_64-linux-gnu.so
+7f78ff6f9000-7f78ff6fa000 rw-p 0002c000 08:02 15074140                   /home/piai/anaconda3/lib/python3.8/site-packages/matplotlib/_path.cpython-38-x86_64-linux-gnu.so
+7f78ff6fa000-7f78ff73b000 rw-p 00000000 00:00 0 
+7f78ff73b000-7f78ff73e000 r--p 00000000 08:02 15074775                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imagingft.cpython-38-x86_64-linux-gnu.so
+7f78ff73e000-7f78ff741000 r-xp 00003000 08:02 15074775                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imagingft.cpython-38-x86_64-linux-gnu.so
+7f78ff741000-7f78ff743000 r--p 00006000 08:02 15074775                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imagingft.cpython-38-x86_64-linux-gnu.so
+7f78ff743000-7f78ff744000 r--p 00007000 08:02 15074775                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imagingft.cpython-38-x86_64-linux-gnu.so
+7f78ff744000-7f78ff745000 rw-p 00008000 08:02 15074775                   /home/piai/anaconda3/lib/python3.8/site-packages/PIL/_imagingft.cpython-38-x86_64-linux-gnu.so
+7f78ff745000-7f78ff7c5000 rw-p 00000000 00:00 0 
+7f78ff7c5000-7f78ff7c8000 r--p 00000000 08:02 14684016                   /home/piai/anaconda3/lib/python3.8/lib-dynload/unicodedata.cpython-38-x86_64-linux-gnu.so
+7f78ff7c8000-7f78ff7ce000 r-xp 00003000 08:02 14684016                   /home/piai/anaconda3/lib/python3.8/lib-dynload/unicodedata.cpython-38-x86_64-linux-gnu.so
+7f78ff7ce000-7f78ff8d0000 r--p 00009000 08:02 14684016                   /home/piai/anaconda3/lib/python3.8/lib-dynload/unicodedata.cpython-38-x86_64-linux-gnu.so
+7f78ff8d0000-7f78ff8d1000 r--p 0010a000 08:02 14684016                   /home/piai/anaconda3/lib/python3.8/lib-dynload/unicodedata.cpython-38-x86_64-linux-gnu.so
+7f78ff8d1000-7f78ff8d2000 rw-p 0010b000 08:02 14684016                   /home/piai/anaconda3/lib/python3.8/lib-dynload/unicodedata.cpython-38-x86_64-linux-gnu.so
+7f78ff8d2000-7f78ffb52000 rw-p 00000000 00:00 0 
+7f78ffb52000-7f78ffb56000 r--p 00000000 08:02 14683353                   /home/piai/anaconda3/lib/python3.8/lib-dynload/array.cpython-38-x86_64-linux-gnu.so
+7f78ffb56000-7f78ffb5f000 r-xp 00004000 08:02 14683353                   /home/piai/anaconda3/lib/python3.8/lib-dynload/array.cpython-38-x86_64-linux-gnu.so
+7f78ffb5f000-7f78ffb64000 r--p 0000d000 08:02 14683353                   /home/piai/anaconda3/lib/python3.8/lib-dynload/array.cpython-38-x86_64-linux-gnu.so
+7f78ffb64000-7f78ffb65000 r--p 00011000 08:02 14683353                   /home/piai/anaconda3/lib/python3.8/lib-dynload/array.cpython-38-x86_64-linux-gnu.so
+7f78ffb65000-7f78ffb66000 rw-p 00012000 08:02 14683353                   /home/piai/anaconda3/lib/python3.8/lib-dynload/array.cpython-38-x86_64-linux-gnu.so
+7f78ffb66000-7f78ffd26000 rw-p 00000000 00:00 0 
+7f78ffd26000-7f78ffd2a000 r--p 00000000 08:02 14683245                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_asyncio.cpython-38-x86_64-linux-gnu.so
+7f78ffd2a000-7f78ffd2f000 r-xp 00004000 08:02 14683245                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_asyncio.cpython-38-x86_64-linux-gnu.so
+7f78ffd2f000-7f78ffd33000 r--p 00009000 08:02 14683245                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_asyncio.cpython-38-x86_64-linux-gnu.so
+7f78ffd33000-7f78ffd34000 r--p 0000c000 08:02 14683245                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_asyncio.cpython-38-x86_64-linux-gnu.so
+7f78ffd34000-7f78ffd36000 rw-p 0000d000 08:02 14683245                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_asyncio.cpython-38-x86_64-linux-gnu.so
+7f78ffd36000-7f78ffdb6000 rw-p 00000000 00:00 0 
+7f78ffdb6000-7f78ffdd5000 r--p 00000000 08:02 786649                     /home/piai/anaconda3/lib/libssl.so.1.1
+7f78ffdd5000-7f78ffe1f000 r-xp 0001f000 08:02 786649                     /home/piai/anaconda3/lib/libssl.so.1.1
+7f78ffe1f000-7f78ffe38000 r--p 00069000 08:02 786649                     /home/piai/anaconda3/lib/libssl.so.1.1
+7f78ffe38000-7f78ffe39000 ---p 00082000 08:02 786649                     /home/piai/anaconda3/lib/libssl.so.1.1
+7f78ffe39000-7f78ffe42000 r--p 00082000 08:02 786649                     /home/piai/anaconda3/lib/libssl.so.1.1
+7f78ffe42000-7f78ffe46000 rw-p 0008b000 08:02 786649                     /home/piai/anaconda3/lib/libssl.so.1.1
+7f78ffe46000-7f78ffe56000 r--p 00000000 08:02 14683447                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ssl.cpython-38-x86_64-linux-gnu.so
+7f78ffe56000-7f78ffe5f000 r-xp 00010000 08:02 14683447                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ssl.cpython-38-x86_64-linux-gnu.so
+7f78ffe5f000-7f78ffe6b000 r--p 00019000 08:02 14683447                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ssl.cpython-38-x86_64-linux-gnu.so
+7f78ffe6b000-7f78ffe6c000 ---p 00025000 08:02 14683447                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ssl.cpython-38-x86_64-linux-gnu.so
+7f78ffe6c000-7f78ffe6d000 r--p 00025000 08:02 14683447                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ssl.cpython-38-x86_64-linux-gnu.so
+7f78ffe6d000-7f78ffe74000 rw-p 00026000 08:02 14683447                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_ssl.cpython-38-x86_64-linux-gnu.so
+7f78ffe74000-7f78ffe79000 r--p 00000000 08:02 14683308                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_socket.cpython-38-x86_64-linux-gnu.so
+7f78ffe79000-7f78ffe81000 r-xp 00005000 08:02 14683308                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_socket.cpython-38-x86_64-linux-gnu.so
+7f78ffe81000-7f78ffe89000 r--p 0000d000 08:02 14683308                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_socket.cpython-38-x86_64-linux-gnu.so
+7f78ffe89000-7f78ffe8a000 r--p 00014000 08:02 14683308                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_socket.cpython-38-x86_64-linux-gnu.so
+7f78ffe8a000-7f78ffe8b000 rw-p 00015000 08:02 14683308                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_socket.cpython-38-x86_64-linux-gnu.so
+7f78ffe8b000-7f78fff8b000 rw-p 00000000 00:00 0 
+7f78fff8b000-7f78fff9b000 r--p 00000000 08:02 790096                     /home/piai/anaconda3/lib/libsqlite3.so.0.8.6
+7f78fff9b000-7f7900076000 r-xp 00010000 08:02 790096                     /home/piai/anaconda3/lib/libsqlite3.so.0.8.6
+7f7900076000-7f79000a7000 r--p 000eb000 08:02 790096                     /home/piai/anaconda3/lib/libsqlite3.so.0.8.6
+7f79000a7000-7f79000a8000 ---p 0011c000 08:02 790096                     /home/piai/anaconda3/lib/libsqlite3.so.0.8.6
+7f79000a8000-7f79000ac000 r--p 0011c000 08:02 790096                     /home/piai/anaconda3/lib/libsqlite3.so.0.8.6
+7f79000ac000-7f79000af000 rw-p 00120000 08:02 790096                     /home/piai/anaconda3/lib/libsqlite3.so.0.8.6
+7f79000af000-7f79000b7000 r--p 00000000 08:02 14683400                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+7f79000b7000-7f79000c2000 r-xp 00008000 08:02 14683400                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+7f79000c2000-7f79000c6000 r--p 00013000 08:02 14683400                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+7f79000c6000-7f79000c7000 ---p 00017000 08:02 14683400                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+7f79000c7000-7f79000c8000 r--p 00017000 08:02 14683400                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+7f79000c8000-7f79000ca000 rw-p 00018000 08:02 14683400                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sqlite3.cpython-38-x86_64-linux-gnu.so
+7f79000ca000-7f790010a000 rw-p 00000000 00:00 0 
+7f790010a000-7f790010f000 r--p 00000000 08:02 14683798                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_pickle.cpython-38-x86_64-linux-gnu.so
+7f790010f000-7f7900124000 r-xp 00005000 08:02 14683798                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_pickle.cpython-38-x86_64-linux-gnu.so
+7f7900124000-7f790012a000 r--p 0001a000 08:02 14683798                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_pickle.cpython-38-x86_64-linux-gnu.so
+7f790012a000-7f790012b000 ---p 00020000 08:02 14683798                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_pickle.cpython-38-x86_64-linux-gnu.so
+7f790012b000-7f790012c000 r--p 00020000 08:02 14683798                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_pickle.cpython-38-x86_64-linux-gnu.so
+7f790012c000-7f790012e000 rw-p 00021000 08:02 14683798                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_pickle.cpython-38-x86_64-linux-gnu.so
+7f790012e000-7f790022e000 rw-p 00000000 00:00 0 
+7f790022e000-7f7900233000 r--p 00000000 08:02 14683734                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_datetime.cpython-38-x86_64-linux-gnu.so
+7f7900233000-7f7900244000 r-xp 00005000 08:02 14683734                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_datetime.cpython-38-x86_64-linux-gnu.so
+7f7900244000-7f790024a000 r--p 00016000 08:02 14683734                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_datetime.cpython-38-x86_64-linux-gnu.so
+7f790024a000-7f790024b000 r--p 0001b000 08:02 14683734                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_datetime.cpython-38-x86_64-linux-gnu.so
+7f790024b000-7f790024d000 rw-p 0001c000 08:02 14683734                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_datetime.cpython-38-x86_64-linux-gnu.so
+7f790024d000-7f790034d000 rw-p 00000000 00:00 0 
+7f790034d000-7f7900350000 r--p 00000000 08:02 14683558                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha3.cpython-38-x86_64-linux-gnu.so
+7f7900350000-7f7900363000 r-xp 00003000 08:02 14683558                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha3.cpython-38-x86_64-linux-gnu.so
+7f7900363000-7f7900365000 r--p 00016000 08:02 14683558                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha3.cpython-38-x86_64-linux-gnu.so
+7f7900365000-7f7900366000 r--p 00017000 08:02 14683558                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha3.cpython-38-x86_64-linux-gnu.so
+7f7900366000-7f7900367000 rw-p 00018000 08:02 14683558                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha3.cpython-38-x86_64-linux-gnu.so
+7f7900367000-7f79003e2000 r--p 00000000 08:02 12980149                   /home/piai/anaconda3/lib/libcrypto.so.1.1
+7f79003e2000-7f7900575000 r-xp 0007b000 08:02 12980149                   /home/piai/anaconda3/lib/libcrypto.so.1.1
+7f7900575000-7f7900602000 r--p 0020e000 08:02 12980149                   /home/piai/anaconda3/lib/libcrypto.so.1.1
+7f7900602000-7f790062d000 r--p 0029a000 08:02 12980149                   /home/piai/anaconda3/lib/libcrypto.so.1.1
+7f790062d000-7f790062f000 rw-p 002c5000 08:02 12980149                   /home/piai/anaconda3/lib/libcrypto.so.1.1
+7f790062f000-7f7900673000 rw-p 00000000 00:00 0 
+7f7900673000-7f7900674000 r--p 00000000 08:02 787695                     /home/piai/anaconda3/lib/python3.8/site-packages/tornado/speedups.cpython-38-x86_64-linux-gnu.so
+7f7900674000-7f7900675000 r-xp 00001000 08:02 787695                     /home/piai/anaconda3/lib/python3.8/site-packages/tornado/speedups.cpython-38-x86_64-linux-gnu.so
+7f7900675000-7f7900676000 r--p 00002000 08:02 787695                     /home/piai/anaconda3/lib/python3.8/site-packages/tornado/speedups.cpython-38-x86_64-linux-gnu.so
+7f7900676000-7f7900677000 r--p 00002000 08:02 787695                     /home/piai/anaconda3/lib/python3.8/site-packages/tornado/speedups.cpython-38-x86_64-linux-gnu.so
+7f7900677000-7f7900678000 rw-p 00003000 08:02 787695                     /home/piai/anaconda3/lib/python3.8/site-packages/tornado/speedups.cpython-38-x86_64-linux-gnu.so
+7f7900678000-7f790067a000 r--p 00000000 08:02 14947296                   /home/piai/anaconda3/lib/libffi.so.7.1.0
+7f790067a000-7f7900680000 r-xp 00002000 08:02 14947296                   /home/piai/anaconda3/lib/libffi.so.7.1.0
+7f7900680000-7f7900681000 r--p 00008000 08:02 14947296                   /home/piai/anaconda3/lib/libffi.so.7.1.0
+7f7900681000-7f7900682000 ---p 00009000 08:02 14947296                   /home/piai/anaconda3/lib/libffi.so.7.1.0
+7f7900682000-7f7900683000 r--p 00009000 08:02 14947296                   /home/piai/anaconda3/lib/libffi.so.7.1.0
+7f7900683000-7f7900684000 rw-p 0000a000 08:02 14947296                   /home/piai/anaconda3/lib/libffi.so.7.1.0
+7f7900684000-7f7900704000 rw-p 00000000 00:00 0 
+7f7900704000-7f7900707000 r--p 00000000 08:02 14682728                   /home/piai/anaconda3/lib/python3.8/lib-dynload/termios.cpython-38-x86_64-linux-gnu.so
+7f7900707000-7f7900708000 r-xp 00003000 08:02 14682728                   /home/piai/anaconda3/lib/python3.8/lib-dynload/termios.cpython-38-x86_64-linux-gnu.so
+7f7900708000-7f790070a000 r--p 00004000 08:02 14682728                   /home/piai/anaconda3/lib/python3.8/lib-dynload/termios.cpython-38-x86_64-linux-gnu.so
+7f790070a000-7f790070b000 r--p 00005000 08:02 14682728                   /home/piai/anaconda3/lib/python3.8/lib-dynload/termios.cpython-38-x86_64-linux-gnu.so
+7f790070b000-7f790070d000 rw-p 00006000 08:02 14682728                   /home/piai/anaconda3/lib/python3.8/lib-dynload/termios.cpython-38-x86_64-linux-gnu.so
+7f790070d000-7f790084d000 rw-p 00000000 00:00 0 
+7f790084d000-7f790084f000 r--p 00000000 08:02 14682816                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_random.cpython-38-x86_64-linux-gnu.so
+7f790084f000-7f7900851000 r-xp 00002000 08:02 14682816                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_random.cpython-38-x86_64-linux-gnu.so
+7f7900851000-7f7900852000 r--p 00004000 08:02 14682816                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_random.cpython-38-x86_64-linux-gnu.so
+7f7900852000-7f7900853000 r--p 00004000 08:02 14682816                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_random.cpython-38-x86_64-linux-gnu.so
+7f7900853000-7f7900854000 rw-p 00005000 08:02 14682816                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_random.cpython-38-x86_64-linux-gnu.so
+7f7900854000-7f7900855000 r--p 00000000 08:02 14682869                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha512.cpython-38-x86_64-linux-gnu.so
+7f7900855000-7f790085e000 r-xp 00001000 08:02 14682869                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha512.cpython-38-x86_64-linux-gnu.so
+7f790085e000-7f790085f000 r--p 0000a000 08:02 14682869                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha512.cpython-38-x86_64-linux-gnu.so
+7f790085f000-7f7900860000 r--p 0000a000 08:02 14682869                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha512.cpython-38-x86_64-linux-gnu.so
+7f7900860000-7f7900861000 rw-p 0000b000 08:02 14682869                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_sha512.cpython-38-x86_64-linux-gnu.so
+7f7900861000-7f7900862000 r--p 00000000 08:02 14682807                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bisect.cpython-38-x86_64-linux-gnu.so
+7f7900862000-7f7900863000 r-xp 00001000 08:02 14682807                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bisect.cpython-38-x86_64-linux-gnu.so
+7f7900863000-7f7900864000 r--p 00002000 08:02 14682807                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bisect.cpython-38-x86_64-linux-gnu.so
+7f7900864000-7f7900865000 r--p 00002000 08:02 14682807                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bisect.cpython-38-x86_64-linux-gnu.so
+7f7900865000-7f7900866000 rw-p 00003000 08:02 14682807                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bisect.cpython-38-x86_64-linux-gnu.so
+7f7900866000-7f7900926000 rw-p 00000000 00:00 0 
+7f7900926000-7f7900929000 r--p 00000000 08:02 14683215                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_struct.cpython-38-x86_64-linux-gnu.so
+7f7900929000-7f790092f000 r-xp 00003000 08:02 14683215                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_struct.cpython-38-x86_64-linux-gnu.so
+7f790092f000-7f7900933000 r--p 00009000 08:02 14683215                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_struct.cpython-38-x86_64-linux-gnu.so
+7f7900933000-7f7900934000 r--p 0000c000 08:02 14683215                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_struct.cpython-38-x86_64-linux-gnu.so
+7f7900934000-7f7900935000 rw-p 0000d000 08:02 14683215                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_struct.cpython-38-x86_64-linux-gnu.so
+7f7900935000-7f7900975000 rw-p 00000000 00:00 0 
+7f7900975000-7f7900976000 r--p 00000000 08:02 14682801                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_opcode.cpython-38-x86_64-linux-gnu.so
+7f7900976000-7f7900977000 r-xp 00001000 08:02 14682801                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_opcode.cpython-38-x86_64-linux-gnu.so
+7f7900977000-7f7900978000 r--p 00002000 08:02 14682801                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_opcode.cpython-38-x86_64-linux-gnu.so
+7f7900978000-7f7900979000 r--p 00002000 08:02 14682801                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_opcode.cpython-38-x86_64-linux-gnu.so
+7f7900979000-7f790097a000 rw-p 00003000 08:02 14682801                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_opcode.cpython-38-x86_64-linux-gnu.so
+7f790097a000-7f79009fa000 rw-p 00000000 00:00 0 
+7f79009fa000-7f79009fe000 r--p 00000000 08:02 526121                     /home/piai/anaconda3/lib/liblzma.so.5.2.5
+7f79009fe000-7f7900a15000 r-xp 00004000 08:02 526121                     /home/piai/anaconda3/lib/liblzma.so.5.2.5
+7f7900a15000-7f7900a20000 r--p 0001b000 08:02 526121                     /home/piai/anaconda3/lib/liblzma.so.5.2.5
+7f7900a20000-7f7900a21000 ---p 00026000 08:02 526121                     /home/piai/anaconda3/lib/liblzma.so.5.2.5
+7f7900a21000-7f7900a22000 r--p 00026000 08:02 526121                     /home/piai/anaconda3/lib/liblzma.so.5.2.5
+7f7900a22000-7f7900a23000 rw-p 00027000 08:02 526121                     /home/piai/anaconda3/lib/liblzma.so.5.2.5
+7f7900a23000-7f7900a26000 r--p 00000000 08:02 14682946                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lzma.cpython-38-x86_64-linux-gnu.so
+7f7900a26000-7f7900a2a000 r-xp 00003000 08:02 14682946                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lzma.cpython-38-x86_64-linux-gnu.so
+7f7900a2a000-7f7900a2d000 r--p 00007000 08:02 14682946                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lzma.cpython-38-x86_64-linux-gnu.so
+7f7900a2d000-7f7900a2e000 r--p 00009000 08:02 14682946                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lzma.cpython-38-x86_64-linux-gnu.so
+7f7900a2e000-7f7900a2f000 rw-p 0000a000 08:02 14682946                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_lzma.cpython-38-x86_64-linux-gnu.so
+7f7900a2f000-7f7900a32000 r--p 00000000 08:02 14682347                   /home/piai/anaconda3/lib/libz.so.1.2.11
+7f7900a32000-7f7900a46000 r-xp 00003000 08:02 14682347                   /home/piai/anaconda3/lib/libz.so.1.2.11
+7f7900a46000-7f7900a4d000 r--p 00017000 08:02 14682347                   /home/piai/anaconda3/lib/libz.so.1.2.11
+7f7900a4d000-7f7900a4e000 r--p 0001d000 08:02 14682347                   /home/piai/anaconda3/lib/libz.so.1.2.11
+7f7900a4e000-7f7900a4f000 rw-p 0001e000 08:02 14682347                   /home/piai/anaconda3/lib/libz.so.1.2.11
+7f7900a4f000-7f7900a8f000 rw-p 00000000 00:00 0 
+7f7900a8f000-7f7900a91000 r--p 00000000 08:02 14682811                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_queue.cpython-38-x86_64-linux-gnu.so
+7f7900a91000-7f7900a92000 r-xp 00002000 08:02 14682811                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_queue.cpython-38-x86_64-linux-gnu.so
+7f7900a92000-7f7900a93000 r--p 00003000 08:02 14682811                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_queue.cpython-38-x86_64-linux-gnu.so
+7f7900a93000-7f7900a94000 r--p 00003000 08:02 14682811                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_queue.cpython-38-x86_64-linux-gnu.so
+7f7900a94000-7f7900a95000 rw-p 00004000 08:02 14682811                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_queue.cpython-38-x86_64-linux-gnu.so
+7f7900a95000-7f7900a96000 r--p 00000000 08:02 14682800                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_contextvars.cpython-38-x86_64-linux-gnu.so
+7f7900a96000-7f7900a97000 r-xp 00001000 08:02 14682800                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_contextvars.cpython-38-x86_64-linux-gnu.so
+7f7900a97000-7f7900a98000 r--p 00002000 08:02 14682800                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_contextvars.cpython-38-x86_64-linux-gnu.so
+7f7900a98000-7f7900a99000 r--p 00002000 08:02 14682800                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_contextvars.cpython-38-x86_64-linux-gnu.so
+7f7900a99000-7f7900a9a000 rw-p 00003000 08:02 14682800                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_contextvars.cpython-38-x86_64-linux-gnu.so
+7f7900a9a000-7f7900a9c000 r--p 00000000 08:02 14682940                   /home/piai/anaconda3/lib/python3.8/lib-dynload/binascii.cpython-38-x86_64-linux-gnu.so
+7f7900a9c000-7f7900aa1000 r-xp 00002000 08:02 14682940                   /home/piai/anaconda3/lib/python3.8/lib-dynload/binascii.cpython-38-x86_64-linux-gnu.so
+7f7900aa1000-7f7900aa3000 r--p 00007000 08:02 14682940                   /home/piai/anaconda3/lib/python3.8/lib-dynload/binascii.cpython-38-x86_64-linux-gnu.so
+7f7900aa3000-7f7900aa4000 ---p 00009000 08:02 14682940                   /home/piai/anaconda3/lib/python3.8/lib-dynload/binascii.cpython-38-x86_64-linux-gnu.so
+7f7900aa4000-7f7900aa5000 r--p 00009000 08:02 14682940                   /home/piai/anaconda3/lib/python3.8/lib-dynload/binascii.cpython-38-x86_64-linux-gnu.so
+7f7900aa5000-7f7900aa6000 rw-p 0000a000 08:02 14682940                   /home/piai/anaconda3/lib/python3.8/lib-dynload/binascii.cpython-38-x86_64-linux-gnu.so
+7f7900aa6000-7f7900aa8000 r--p 00000000 08:02 14683524                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_blake2.cpython-38-x86_64-linux-gnu.so
+7f7900aa8000-7f7900aba000 r-xp 00002000 08:02 14683524                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_blake2.cpython-38-x86_64-linux-gnu.so
+7f7900aba000-7f7900abc000 r--p 00014000 08:02 14683524                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_blake2.cpython-38-x86_64-linux-gnu.so
+7f7900abc000-7f7900abd000 r--p 00015000 08:02 14683524                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_blake2.cpython-38-x86_64-linux-gnu.so
+7f7900abd000-7f7900abe000 rw-p 00016000 08:02 14683524                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_blake2.cpython-38-x86_64-linux-gnu.so
+7f7900abe000-7f7900ac1000 r--p 00000000 08:02 14683012                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_hashlib.cpython-38-x86_64-linux-gnu.so
+7f7900ac1000-7f7900ac6000 r-xp 00003000 08:02 14683012                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_hashlib.cpython-38-x86_64-linux-gnu.so
+7f7900ac6000-7f7900ac8000 r--p 00008000 08:02 14683012                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_hashlib.cpython-38-x86_64-linux-gnu.so
+7f7900ac8000-7f7900ac9000 r--p 00009000 08:02 14683012                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_hashlib.cpython-38-x86_64-linux-gnu.so
+7f7900ac9000-7f7900aca000 rw-p 0000a000 08:02 14683012                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_hashlib.cpython-38-x86_64-linux-gnu.so
+7f7900aca000-7f7900acc000 r--p 00000000 08:02 14682808                   /home/piai/anaconda3/lib/python3.8/lib-dynload/resource.cpython-38-x86_64-linux-gnu.so
+7f7900acc000-7f7900acd000 r-xp 00002000 08:02 14682808                   /home/piai/anaconda3/lib/python3.8/lib-dynload/resource.cpython-38-x86_64-linux-gnu.so
+7f7900acd000-7f7900ace000 r--p 00003000 08:02 14682808                   /home/piai/anaconda3/lib/python3.8/lib-dynload/resource.cpython-38-x86_64-linux-gnu.so
+7f7900ace000-7f7900acf000 r--p 00003000 08:02 14682808                   /home/piai/anaconda3/lib/python3.8/lib-dynload/resource.cpython-38-x86_64-linux-gnu.so
+7f7900acf000-7f7900ad0000 rw-p 00004000 08:02 14682808                   /home/piai/anaconda3/lib/python3.8/lib-dynload/resource.cpython-38-x86_64-linux-gnu.so
+7f7900ad0000-7f7900ad2000 r--p 00000000 08:02 14682818                   /home/piai/anaconda3/lib/python3.8/lib-dynload/fcntl.cpython-38-x86_64-linux-gnu.so
+7f7900ad2000-7f7900ad4000 r-xp 00002000 08:02 14682818                   /home/piai/anaconda3/lib/python3.8/lib-dynload/fcntl.cpython-38-x86_64-linux-gnu.so
+7f7900ad4000-7f7900ad6000 r--p 00004000 08:02 14682818                   /home/piai/anaconda3/lib/python3.8/lib-dynload/fcntl.cpython-38-x86_64-linux-gnu.so
+7f7900ad6000-7f7900ad7000 r--p 00005000 08:02 14682818                   /home/piai/anaconda3/lib/python3.8/lib-dynload/fcntl.cpython-38-x86_64-linux-gnu.so
+7f7900ad7000-7f7900ad8000 rw-p 00006000 08:02 14682818                   /home/piai/anaconda3/lib/python3.8/lib-dynload/fcntl.cpython-38-x86_64-linux-gnu.so
+7f7900ad8000-7f7900c58000 rw-p 00000000 00:00 0 
+7f7900c58000-7f7901769000 r--p 00000000 08:02 9966170                    /usr/lib/locale/locale-archive
+7f7901769000-7f7901906000 r-xp 00000000 08:02 9704650                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f7901906000-7f7901b05000 ---p 0019d000 08:02 9704650                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f7901b05000-7f7901b06000 r--p 0019c000 08:02 9704650                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f7901b06000-7f7901b07000 rw-p 0019d000 08:02 9704650                    /lib/x86_64-linux-gnu/libm-2.27.so
+7f7901b07000-7f7901b0e000 r-xp 00000000 08:02 9704728                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f7901b0e000-7f7901d0d000 ---p 00007000 08:02 9704728                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f7901d0d000-7f7901d0e000 r--p 00006000 08:02 9704728                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f7901d0e000-7f7901d0f000 rw-p 00007000 08:02 9704728                    /lib/x86_64-linux-gnu/librt-2.27.so
+7f7901d0f000-7f7901d11000 r-xp 00000000 08:02 9704752                    /lib/x86_64-linux-gnu/libutil-2.27.so
+7f7901d11000-7f7901f10000 ---p 00002000 08:02 9704752                    /lib/x86_64-linux-gnu/libutil-2.27.so
+7f7901f10000-7f7901f11000 r--p 00001000 08:02 9704752                    /lib/x86_64-linux-gnu/libutil-2.27.so
+7f7901f11000-7f7901f12000 rw-p 00002000 08:02 9704752                    /lib/x86_64-linux-gnu/libutil-2.27.so
+7f7901f12000-7f7901f15000 r-xp 00000000 08:02 9704610                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f7901f15000-7f7902114000 ---p 00003000 08:02 9704610                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f7902114000-7f7902115000 r--p 00002000 08:02 9704610                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f7902115000-7f7902116000 rw-p 00003000 08:02 9704610                    /lib/x86_64-linux-gnu/libdl-2.27.so
+7f7902116000-7f79022fd000 r-xp 00000000 08:02 9704587                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f79022fd000-7f79024fd000 ---p 001e7000 08:02 9704587                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f79024fd000-7f7902501000 r--p 001e7000 08:02 9704587                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f7902501000-7f7902503000 rw-p 001eb000 08:02 9704587                    /lib/x86_64-linux-gnu/libc-2.27.so
+7f7902503000-7f7902507000 rw-p 00000000 00:00 0 
+7f7902507000-7f7902521000 r-xp 00000000 08:02 9704720                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f7902521000-7f7902720000 ---p 0001a000 08:02 9704720                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f7902720000-7f7902721000 r--p 00019000 08:02 9704720                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f7902721000-7f7902722000 rw-p 0001a000 08:02 9704720                    /lib/x86_64-linux-gnu/libpthread-2.27.so
+7f7902722000-7f7902726000 rw-p 00000000 00:00 0 
+7f7902726000-7f790274d000 r-xp 00000000 08:02 9704559                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f790274d000-7f7902751000 r--s 00040000 08:02 9961560                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunpkcs11.jar
+7f7902751000-7f7902753000 r--p 00000000 08:02 14682810                   /home/piai/anaconda3/lib/python3.8/lib-dynload/grp.cpython-38-x86_64-linux-gnu.so
+7f7902753000-7f7902754000 r-xp 00002000 08:02 14682810                   /home/piai/anaconda3/lib/python3.8/lib-dynload/grp.cpython-38-x86_64-linux-gnu.so
+7f7902754000-7f7902755000 r--p 00003000 08:02 14682810                   /home/piai/anaconda3/lib/python3.8/lib-dynload/grp.cpython-38-x86_64-linux-gnu.so
+7f7902755000-7f7902756000 r--p 00003000 08:02 14682810                   /home/piai/anaconda3/lib/python3.8/lib-dynload/grp.cpython-38-x86_64-linux-gnu.so
+7f7902756000-7f7902757000 rw-p 00004000 08:02 14682810                   /home/piai/anaconda3/lib/python3.8/lib-dynload/grp.cpython-38-x86_64-linux-gnu.so
+7f7902757000-7f790275b000 r--p 00000000 08:02 14683341                   /home/piai/anaconda3/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so
+7f790275b000-7f7902763000 r-xp 00004000 08:02 14683341                   /home/piai/anaconda3/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so
+7f7902763000-7f7902767000 r--p 0000c000 08:02 14683341                   /home/piai/anaconda3/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so
+7f7902767000-7f7902768000 r--p 0000f000 08:02 14683341                   /home/piai/anaconda3/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so
+7f7902768000-7f7902769000 rw-p 00010000 08:02 14683341                   /home/piai/anaconda3/lib/python3.8/lib-dynload/math.cpython-38-x86_64-linux-gnu.so
+7f7902769000-7f790276c000 r--p 00000000 08:02 14682873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/select.cpython-38-x86_64-linux-gnu.so
+7f790276c000-7f790276f000 r-xp 00003000 08:02 14682873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/select.cpython-38-x86_64-linux-gnu.so
+7f790276f000-7f7902771000 r--p 00006000 08:02 14682873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/select.cpython-38-x86_64-linux-gnu.so
+7f7902771000-7f7902772000 r--p 00007000 08:02 14682873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/select.cpython-38-x86_64-linux-gnu.so
+7f7902772000-7f7902773000 rw-p 00008000 08:02 14682873                   /home/piai/anaconda3/lib/python3.8/lib-dynload/select.cpython-38-x86_64-linux-gnu.so
+7f7902773000-7f7902775000 r--p 00000000 08:02 14683408                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_json.cpython-38-x86_64-linux-gnu.so
+7f7902775000-7f7902785000 r-xp 00002000 08:02 14683408                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_json.cpython-38-x86_64-linux-gnu.so
+7f7902785000-7f7902787000 r--p 00012000 08:02 14683408                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_json.cpython-38-x86_64-linux-gnu.so
+7f7902787000-7f7902788000 r--p 00013000 08:02 14683408                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_json.cpython-38-x86_64-linux-gnu.so
+7f7902788000-7f7902789000 rw-p 00014000 08:02 14683408                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_json.cpython-38-x86_64-linux-gnu.so
+7f7902789000-7f79027c9000 rw-p 00000000 00:00 0 
+7f79027c9000-7f79027ca000 r--s 0000d000 08:02 9961558                    /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/sunec.jar
+7f79027ca000-7f79027cb000 rw-p 00000000 00:00 0 
+7f79027cb000-7f79027ce000 r--p 00000000 08:02 14683018                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bz2.cpython-38-x86_64-linux-gnu.so
+7f79027ce000-7f79027de000 r-xp 00003000 08:02 14683018                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bz2.cpython-38-x86_64-linux-gnu.so
+7f79027de000-7f79027e1000 r--p 00013000 08:02 14683018                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bz2.cpython-38-x86_64-linux-gnu.so
+7f79027e1000-7f79027e2000 r--p 00015000 08:02 14683018                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bz2.cpython-38-x86_64-linux-gnu.so
+7f79027e2000-7f79027e4000 rw-p 00016000 08:02 14683018                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_bz2.cpython-38-x86_64-linux-gnu.so
+7f79027e4000-7f79027e6000 r--p 00000000 08:02 14682906                   /home/piai/anaconda3/lib/python3.8/lib-dynload/zlib.cpython-38-x86_64-linux-gnu.so
+7f79027e6000-7f79027e9000 r-xp 00002000 08:02 14682906                   /home/piai/anaconda3/lib/python3.8/lib-dynload/zlib.cpython-38-x86_64-linux-gnu.so
+7f79027e9000-7f79027ec000 r--p 00005000 08:02 14682906                   /home/piai/anaconda3/lib/python3.8/lib-dynload/zlib.cpython-38-x86_64-linux-gnu.so
+7f79027ec000-7f79027ed000 r--p 00007000 08:02 14682906                   /home/piai/anaconda3/lib/python3.8/lib-dynload/zlib.cpython-38-x86_64-linux-gnu.so
+7f79027ed000-7f79027ee000 rw-p 00008000 08:02 14682906                   /home/piai/anaconda3/lib/python3.8/lib-dynload/zlib.cpython-38-x86_64-linux-gnu.so
+7f79027ee000-7f7902933000 rw-p 00000000 00:00 0 
+7f7902933000-7f7902934000 r--p 00000000 00:00 0 
+7f7902934000-7f7902936000 r--p 00000000 08:02 14682829                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_posixsubprocess.cpython-38-x86_64-linux-gnu.so
+7f7902936000-7f7902938000 r-xp 00002000 08:02 14682829                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_posixsubprocess.cpython-38-x86_64-linux-gnu.so
+7f7902938000-7f7902939000 r--p 00004000 08:02 14682829                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_posixsubprocess.cpython-38-x86_64-linux-gnu.so
+7f7902939000-7f790293a000 r--p 00004000 08:02 14682829                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_posixsubprocess.cpython-38-x86_64-linux-gnu.so
+7f790293a000-7f790293b000 rw-p 00005000 08:02 14682829                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_posixsubprocess.cpython-38-x86_64-linux-gnu.so
+7f790293b000-7f790293c000 r--p 00000000 08:02 14682902                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_heapq.cpython-38-x86_64-linux-gnu.so
+7f790293c000-7f790293f000 r-xp 00001000 08:02 14682902                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_heapq.cpython-38-x86_64-linux-gnu.so
+7f790293f000-7f7902942000 r--p 00004000 08:02 14682902                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_heapq.cpython-38-x86_64-linux-gnu.so
+7f7902942000-7f7902943000 r--p 00006000 08:02 14682902                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_heapq.cpython-38-x86_64-linux-gnu.so
+7f7902943000-7f7902944000 rw-p 00007000 08:02 14682902                   /home/piai/anaconda3/lib/python3.8/lib-dynload/_heapq.cpython-38-x86_64-linux-gnu.so
+7f7902944000-7f790294b000 r--s 00000000 08:02 10356164                   /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f790294b000-7f790294d000 rw-p 00000000 00:00 0 
+7f790294d000-7f790294e000 r--p 00027000 08:02 9704559                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f790294e000-7f790294f000 rw-p 00028000 08:02 9704559                    /lib/x86_64-linux-gnu/ld-2.27.so
+7f790294f000-7f7902950000 rw-p 00000000 00:00 0 
+7ffc1acb9000-7ffc1acbc000 ---p 00000000 00:00 0 
+7ffc1acbc000-7ffc1adb9000 rw-p 00000000 00:00 0                          [stack]
+7ffc1adbf000-7ffc1adc2000 r--p 00000000 00:00 0                          [vvar]
+7ffc1adc2000-7ffc1adc3000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): /home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/bin:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/*:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/jhannanum-0.8.4.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/kkma-2.0.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/aho-corasick.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/shineware-common-1.0.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/shineware-ds-1.0.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/komoran-3.0.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/snakeyaml-1.12.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/scala-library-2.12.3.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/open-korean-text-2.1.0.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/twitter-text-1.14.7.jar:/home/piai/anaconda3/lib/python3.8/site-packages/konlpy/java/*
+Launcher Type: generic
+
+Environment Variables:
+PATH=/home/piai/anaconda3/bin:/home/piai/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+USERNAME=piai
+SHELL=/bin/bash
+DISPLAY=:1
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xb6c690], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xb6c690], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x98c990], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x98c990], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x98c990], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x98c990], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x98c840], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x98ceb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [python+0x111888], sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: [libjvm.so+0x98ceb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x98ceb0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.5 LTS"
+
+uname:Linux 5.4.0-53-generic #59~18.04.1-Ubuntu SMP Wed Oct 21 12:14:56 UTC 2020 x86_64
+libc:glibc 2.27 NPTL 2.27 
+rlimit: STACK 8192k, CORE 0k, NPROC 255717, NOFILE 4096, AS infinity
+load average:1.25 1.57 1.24
+
+/proc/meminfo:
+MemTotal:       65512152 kB
+MemFree:        52197436 kB
+MemAvailable:   55538948 kB
+Buffers:          488008 kB
+Cached:          4174724 kB
+SwapCached:            0 kB
+Active:         10021208 kB
+Inactive:        2671868 kB
+Active(anon):    8032320 kB
+Inactive(anon):   882508 kB
+Active(file):    1988888 kB
+Inactive(file):  1789360 kB
+Unevictable:          48 kB
+Mlocked:              48 kB
+SwapTotal:       2097148 kB
+SwapFree:        2097148 kB
+Dirty:               576 kB
+Writeback:             0 kB
+AnonPages:       8030528 kB
+Mapped:          1347788 kB
+Shmem:            884488 kB
+KReclaimable:     293036 kB
+Slab:             414092 kB
+SReclaimable:     293036 kB
+SUnreclaim:       121056 kB
+KernelStack:       25168 kB
+PageTables:       112156 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    34853224 kB
+Committed_AS:   26709476 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       34616 kB
+VmallocChunk:          0 kB
+Percpu:             2976 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      4096 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      422704 kB
+DirectMap2M:    13897728 kB
+DirectMap1G:    54525952 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-7
+cpu_memory_nodes: 0
+active_processor_count: 8
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -2
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 12997672960
+memory_max_usage_in_bytes: 0
+
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 85 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 800.792
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 2695.423
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 800.120
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 4
+cpu cores	: 4
+apicid		: 8
+initial apicid	: 8
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 803.102
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 5
+cpu cores	: 4
+apicid		: 10
+initial apicid	: 10
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 4
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 802.467
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 1
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 5
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 2614.663
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 2
+cpu cores	: 4
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 6
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 820.565
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 4
+cpu cores	: 4
+apicid		: 9
+initial apicid	: 9
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 7
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 85
+model name	: Intel(R) Xeon(R) Silver 4112 CPU @ 2.60GHz
+stepping	: 4
+microcode	: 0x2006a08
+cpu MHz		: 811.062
+cache size	: 8448 KB
+physical id	: 0
+siblings	: 8
+core id		: 5
+cpu cores	: 4
+apicid		: 11
+initial apicid	: 11
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cdp_l3 invpcid_single pti intel_ppin ssbd mba ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req pku ospke md_clear flush_l1d
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa itlb_multihit
+bogomips	: 5200.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 65512152k(52196932k free), swap 2097148k(2097148k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.275-b01) for linux-amd64 JRE (1.8.0_275-8u275-b01-0ubuntu1~18.04-b01), built on Nov  9 2020 02:38:58 by "buildd" with gcc 7.5.0
+
+time: Mon Nov 23 16:20:59 2020
+timezone: KST
+elapsed time: 808.340971 seconds (0d 0h 13m 28s)
+

@@ -1,0 +1,32 @@
+digraph Tree {
+node [shape=box, style="filled", color="black"] ;
+0 [label="ABDOMEN <= 91.3\nmse = 70.379\nsamples = 176\nvalue = 18.676", fillcolor="#f3c5a4"] ;
+1 [label="ABDOMEN <= 85.45\nmse = 31.841\nsamples = 90\nvalue = 12.782", fillcolor="#fae5d6"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="ABDOMEN <= 79.65\nmse = 21.668\nsamples = 50\nvalue = 10.014", fillcolor="#fdf4ee"] ;
+1 -> 2 ;
+3 [label="mse = 17.823\nsamples = 20\nvalue = 7.99", fillcolor="#ffffff"] ;
+2 -> 3 ;
+4 [label="mse = 19.679\nsamples = 30\nvalue = 11.363", fillcolor="#fbede2"] ;
+2 -> 4 ;
+5 [label="WEIGHT <= 170.125\nmse = 23.004\nsamples = 40\nvalue = 16.242", fillcolor="#f6d2b9"] ;
+1 -> 5 ;
+6 [label="mse = 18.084\nsamples = 20\nvalue = 17.93", fillcolor="#f4c9ab"] ;
+5 -> 6 ;
+7 [label="mse = 22.229\nsamples = 20\nvalue = 14.555", fillcolor="#f8dbc7"] ;
+5 -> 7 ;
+8 [label="ABDOMEN <= 104.9\nmse = 36.311\nsamples = 86\nvalue = 24.844", fillcolor="#eca470"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="HEIGHT <= 71.875\nmse = 19.797\nsamples = 65\nvalue = 22.762", fillcolor="#efaf81"] ;
+8 -> 9 ;
+10 [label="ABDOMEN <= 95.5\nmse = 21.57\nsamples = 42\nvalue = 23.821", fillcolor="#eda978"] ;
+9 -> 10 ;
+11 [label="mse = 21.181\nsamples = 21\nvalue = 22.59", fillcolor="#efb083"] ;
+10 -> 11 ;
+12 [label="mse = 18.928\nsamples = 21\nvalue = 25.052", fillcolor="#eca36e"] ;
+10 -> 12 ;
+13 [label="mse = 10.763\nsamples = 23\nvalue = 20.826", fillcolor="#f1ba92"] ;
+9 -> 13 ;
+14 [label="mse = 32.445\nsamples = 21\nvalue = 31.29", fillcolor="#e58139"] ;
+8 -> 14 ;
+}
